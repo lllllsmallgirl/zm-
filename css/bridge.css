@@ -1,0 +1,840 @@
+#bridge{
+	list-style-type: none;
+}
+
+#bWorkingCondition1 {
+	width: 100%;
+	height: 43px;
+}
+
+#bWorkingCondition1 div {
+	width: 256px;
+	height: 43px;
+	border: 1px solid black;
+	float: left;
+	text-align: center;
+	font-size: 30px;
+	font-family: "Times New Roman", Georgia, Serif;
+}
+
+#bStandBy {
+	background-color: darkred;
+}
+
+#bDeadband{
+	background-color: darkred;
+}
+#bBridge {
+	background-color: #01D867;
+}
+
+#bEngReady,
+#bSystemReady {
+	background-color: red;
+}
+
+#bPanel {
+	width: 100%;
+	height: 555px;
+	position: relative;
+	background-color: #000080;
+	border-bottom: 35px solid #D8D8D8;
+}
+
+#bCanvas {
+	position: relative;
+	/*border: 1px solid red;*/
+	float: left;
+}
+
+#bCanvas1 {
+	position: relative;
+	border: 1px solid red;
+	float: left;
+}
+
+#bMERPMPointer {
+	position: relative;
+	left: -655px;
+	top: 152px;
+}
+
+#bStartAirPressPointer {
+	position: relative;
+	left: -238px;
+	top: 95px;
+}
+
+#bActuatorPosFeedbackPointer {
+	position: relative;
+	top: 342px;
+	left: -250px;
+}
+
+#bPanelPicture {
+	position: absolute;
+	top: 35px;
+	left: 1000px;
+}
+
+#bMERPM {
+	position: absolute;
+	top: 300px;
+	left: 100px;
+	/*				border: 1px solid red;
+*/
+	width: 300px;
+	height: 50px;
+	color: white;
+	font-size: 30px;
+	text-align: center;
+}
+
+#bStartAirPress {
+	position: absolute;
+	top: 235px;
+	left: 580px;
+	/*				border: 1px solid red;
+*/
+	width: 200px;
+	height: 50px;
+	color: white;
+	font-size: 25px;
+	text-align: center;
+}
+
+#bActuatorPosFeedback {
+	position: absolute;
+	top: 485px;
+	left: 580px;
+	/*				border: 1px solid red;
+*/
+	width: 200px;
+	height: 50px;
+	color: white;
+	font-size: 25px;
+	text-align: center;
+}
+
+#bState {
+	position: absolute;
+	top: 360px;
+	left: 100px;
+	width: 300px;
+	height: 100px;
+	color: yellow;
+	font-size: 35px;
+	text-align: center;
+	/*				border: 1px solid red;
+*/
+}
+
+#btelegraphbox {
+	width: 10px;
+	height: 10px;
+	position: relative;
+	left: -40px;
+	top: -80px;
+	/*border: 1px solid red;*/
+}
+
+#btelegraph1 {
+	width: 200px;
+	height: 500px;
+	position: absolute;
+	top: -43px;
+	left: 960px;
+}
+
+#btelegraph1lever {
+	width: 113px;
+	height: 50px;
+	background-color: #000000;
+	position: relative;
+	left: 1003px;
+	top: -335px;
+	cursor: pointer;
+}
+
+#btelegraph1LedBox1 {
+	width: 50px;
+	height: 350px;
+	position: absolute;
+	left: 960px;
+	top: -30px;
+	/*border: 1px solid red;*/
+}
+
+.btelegraph1Led1 {
+	width: 30px;
+	height: 10px;
+	border-radius: 6px;
+	background-color: #640000;
+	margin: 22px 10px;
+}
+
+#btelegraph1LedBox2 {
+	width: 30px;
+	height: 350px;
+	position: absolute;
+	left: 1112px;
+	top: -30px;
+	/*border: 1px solid red;*/
+}
+
+.btelegraph1Led2 {
+	width: 30px;
+	height: 10px;
+	border-radius: 6px;
+	background-color: #640000;
+	margin: 22px 10px;
+}
+
+#btelegraph1Text1 {
+	width: 100px;
+	height: 15px;
+	position: absolute;
+	/*border: 1px solid red;*/
+	left: 1010px;
+	top: 324px;
+	color: yellow;
+	text-align: center;
+	font-size: 12px;
+}
+
+#btelegraphButtonBox1 {
+	width: 40px;
+	height: 150px;
+	/*border: 1px solid red;*/
+	position: relative;
+	left: 974px;
+	top: -188px;
+	color: white;
+}
+
+#btelegraphButtonBox1>div {
+	width: 27px;
+	height: 27px;
+	border-radius: 27px;
+	border: 2px solid white;
+	margin-top: 7px;
+	font-size: 11px;
+	cursor: pointer;
+}
+
+#btelegraphButtonBox1>div>div {
+	width: 7px;
+	height: 7px;
+	border-radius: 7px;
+	border: 1px solid white;
+	position: relative;
+	top: -20px;
+	background-color: white;
+}
+
+#bLimitersMenu {
+	width: 1280px;
+	height: 755px;
+	position: absolute;
+	top: 42px;
+	background-color: #000000;
+	display: none;
+}
+
+#bLimitersRPM {
+	width: 400px;
+	height: 460px;
+	border: 5px solid white;
+	padding: 8px 0px 0px 33px;
+	border-radius: 25px;
+	position: absolute;
+	top: 30px;
+	left: 20px;
+	color: white;
+	font-family: serif;
+	text-align: left;
+}
+
+#bLimitersRPM li{
+	list-style-type: none;
+	cursor: pointer;
+	margin : 0 0;
+	font-size: 30px;
+}
+
+#bLimitersRPM a:link{
+	color: white;
+}
+
+#bLimitersRPM a:hover{
+	color: blue;
+}
+
+#bLimitersRPM a:vactive{
+	color:white;
+}
+
+#bLimitersFUEL {
+	width: 300px;
+	height: 460px;
+	border: 5px solid white;
+	padding: 8px 0px 0px 33px;
+	border-radius: 25px;
+	position: absolute;
+	top: 30px;
+	left: 450px;
+	color: white;
+	font-family: serif;
+	font-size: 30px;
+	text-align: left;
+	cursor: pointer;
+}
+
+#btelegraphButtonBox2 {
+	width: 40px;
+	height: 150px;
+	/*border: 1px solid red;*/
+	position: relative;
+	left: 1121px;
+	top: -338px;
+	color: white;
+	text-align: center;
+}
+
+#btelegraphButtonBox2>div {
+	width: 27px;
+	height: 27px;
+	border-radius: 27px;
+	border: 2px solid white;
+	margin-top: 7px;
+	font-size: 8px;
+	cursor: pointer;
+}
+
+#batSeaLed {
+	width: 7px;
+	height: 7px;
+	border-radius: 7px;
+	border: 1px solid white;
+	position: relative;
+	top: -25px;
+	background-color: white;
+}
+
+#bemergencyStop {
+	width: 70px;
+	height: 25px;
+	/*border: 1px solid yellow;*/
+	color: black;
+	position: relative;
+	left: 1025px;
+	top: -433px;
+	font-size: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#bEngineStateBox {
+	width: 1280px;
+	height: 520px;
+	position: absolute;
+	top: 44px;
+	background-color: #000000;
+	display: none;
+	/* list-style-type: disc; */
+}
+
+#bECRstate {
+	width: 300px;
+	height: 460px;
+	border: 5px solid white;
+	padding: 8px 0px 0px 8px;
+	border-radius: 25px;
+	position: absolute;
+	top: 30px;
+	left: 20px;
+	color: white;
+	font-family: serif;
+	font-size: 30px;
+}
+
+
+#bECRstart {
+	width: 390px;
+	height: 460px;
+	border: 5px solid red;
+	border-radius: 25px;
+	padding: 8px 0px 0px 8px;
+	position: absolute;
+	top: 30px;
+	left: 350px;
+	color: white;
+	font-family: serif;
+	font-size: 30px;
+}
+
+#bECRengine {
+	width: 484px;
+	height: 460px;
+	margin: 30px 0px 30px 10px;
+	border: 5px solid blue;
+	border-radius: 25px;
+	padding: 8px 0px 0px 8px;
+	position: absolute;
+	top: 0px;
+	left: 760px;
+	color: white;
+	font-family: serif;
+	font-size: 30px;
+}
+
+#bEngineStateHome {
+	position: absolute;
+	top: 521px;
+	height: 234px;
+	width: 100%;
+	border-top: 35px solid #D8D8D8;
+	background-color: #868784;
+	padding-top: 45px;
+}
+
+#bseq {
+	width: 1280px;
+	height: 755px;
+	position: absolute;
+	top: 42px;
+	background-color: #000000;
+	display: none;
+}
+
+#bLimitersHome {
+	position: absolute;
+	top: 521px;
+	height: 234px;
+	width: 100%;
+	border-top: 35px solid #D8D8D8;
+	background-color: #868784;
+	padding-top: 45px;
+}
+
+#bseqHome {
+	position: absolute;
+	top: 521px;
+	height: 234px;
+	width: 100%;
+	border-top: 35px solid #D8D8D8;
+	background-color: #868784;
+	padding-top: 45px;
+}
+
+.homeButtons {
+	width: 200px;
+	height: 50px;
+	background-color: #D9DBD5;
+	border: 2px solid white;
+	float: left;
+	text-align: center;
+	font-size: 30px;
+	color: blue;
+	font-family: "Times New Roman", Georgia, Serif;
+}
+
+#bWorkingCondition2 {
+	width: 100%;
+	height: 200px;
+	background-color: #868784;
+}
+
+#bclear {
+	clear: both;
+}
+
+#bAlarm {
+	width: 200px;
+	height: 50px;
+	background-color: #D9DBD5;
+	margin: 15px 20px 0px 50px;
+	border: 2px solid white;
+	float: left;
+	text-align: center;
+	font-size: 30px;
+	color: blue;
+	font-family: "Times New Roman", Georgia, Serif;
+	cursor: pointer;
+}
+
+#bLimiters,
+#bControlPos,
+#bMiscMenu,
+#bFineTuning {
+	width: 200px;
+	height: 50px;
+	background-color: #D9DBD5;
+	margin: 15px 20px 0px 20px;
+	border: 2px solid white;
+	float: left;
+	text-align: center;
+	font-size: 30px;
+	color: blue;
+	font-family: "Times New Roman", Georgia, Serif;
+	cursor: pointer;
+}
+
+#bSafetySys {
+	width: 200px;
+	height: 50px;
+	background-color: #D9DBD5;
+	float: left;
+	margin: 0px 20px auto 50px;
+	border: 2px solid white;
+	text-align: center;
+	font-size: 30px;
+	color: blue;
+	font-family: "Times New Roman", Georgia, Serif;
+	cursor: pointer;
+}
+
+#bEngineState,
+#bEngineMode,
+#bSeqDiagram,
+#bHome {
+	width: 200px;
+	height: 50px;
+	background-color: #D9DBD5;
+	float: left;
+	margin: 0px 20px auto 20px;
+	border: 2px solid white;
+	text-align: center;
+	font-size: 30px;
+	color: blue;
+	font-family: "Times New Roman", Georgia, Serif;
+	cursor: pointer;
+}
+
+#setManualRpmLimit {
+	position: absolute;
+	top: 100px;
+	left: 550px;
+	height: 250px;
+	width: 280px;
+	font-size: 30px;
+	background-color: #FF5834;
+	display: none;
+	padding:20px
+}
+
+#setMinimumRpmLimit {
+	position: absolute;
+	top: 100px;
+	left: 550px;
+	height: 250px;
+	width: 280px;
+	font-size: 30px;
+	background-color: #FF5834;
+	display: none;
+	padding:20px
+}
+
+#setLoadProgram {
+	position: absolute;
+	top: 100px;
+	left: 550px;
+	height: 250px;
+	width: 280px;
+	font-size: 30px;
+	background-color: #FF5834;
+	display: none;
+	padding:20px
+}
+
+#setCriticalRPM{
+	position: absolute;
+	top: 100px;
+	left: 500px;
+	height: 350px;
+	width: 280px;
+	font-size: 30px;
+	background-color: #FF5834;
+	display: none;
+	padding:20px
+}
+
+#pidParameter {
+	position: relative;
+	top: 100px;
+	left: 550px;
+	height: 250px;
+	width: 280px;
+	font-size: 30px;
+	background-color: #FF5834;
+	display: none;
+}
+
+
+input {
+	width: 200px;
+	height: 40px;
+	font-size: 30px;
+	margin: 10px;
+	text-align: right;
+}
+
+#pidCancel,
+#pidClose,
+#pidSure {
+	width: 100px;
+	text-align: center;
+	margin: 10px 15px;
+}
+
+.bseqLed {
+	width: 35px;
+	height: 35px;
+	border-radius: 25px;
+	background-color: #c3c3c3;
+	border: 3px solid white;
+	position: absolute;
+}
+
+#bseqBridge {
+	left: 114px;
+	top: 94px;
+}
+
+#bseqAheadcmd {
+	left: 245px;
+	top: 94px;
+}
+
+#bseqAheadsv {
+	left: 490px;
+	top: 94px;
+}
+
+#bseqStopgov {
+	left: 565px;
+	top: 94px;
+}
+
+#bseqLimitersCanceled {
+	left: 644px;
+	top: 94px;
+}
+
+#bseqSlowTurningsv {
+	left: 830px;
+	top: 94px;
+}
+
+#bseqLimitersActive {
+	left: 1105px;
+	top: 94px;
+}
+
+#bseqEngineRuningAhead {
+	left: 1180px;
+	top: 94px;
+}
+
+#bseqAsterncmd {
+	left: 245px;
+	top: 274px;
+}
+
+#bseqManualbcr {
+	left: 114px;
+	top: 274px;
+}
+
+#bseqAsternsv {
+	left: 490px;
+	top: 274px;
+}
+
+#bseqRepeatedStart {
+	left: 703px;
+	top: 274px;
+}
+
+#bseqAboveStartLevel {
+	left: 703px;
+	top: 183px;
+}
+
+#bseqStartFail {
+	left: 972px;
+	top: 274px;
+}
+
+#bseqEngineRuningAstern {
+	left: 1180px;
+	top: 276px;
+}
+
+#bseqStopcmd {
+	left: 153px;
+	top: 184px;
+}
+
+#bseqStartBlock {
+	left: 360px;
+	top: 184px;
+}
+
+#bseqAboveReversingLevel {
+	left: 440px;
+	top: 184px;
+}
+
+#bseqStopsv {
+	left: 1044px;
+	top: 184px;
+}
+
+#bseqStartsv {
+	left: 830px;
+	top: 184px;
+}
+
+#bcontrolPosBox {
+	width: 1280px;
+	height: 755px;
+	position: absolute;
+	top: 42px;
+	background-color: #000000;
+	display: none;
+}
+
+#bcontrolPosCanvas {
+	/*border: 1px solid red;*/
+}
+
+.bcpLED {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	background-color: #BAC0C0;
+}
+
+#bcpPortwing {
+	left: 95px;
+	top: 150px;
+}
+
+#bcpStbwing {
+	left: 895px;
+	top: 150px;
+}
+
+#bcpBridge {
+	left: 505px;
+	top: 300px;
+}
+
+#bcpEcr {
+	left: 325px;
+	top: 370px;
+}
+
+#bcpEcrManualcontrol {
+	left: 635px;
+	top: 370px;
+}
+
+#bcpLocalManualcontrol {
+	left: 505px;
+	top: 450px;
+}
+
+#bcpHome {
+	position: absolute;
+	top: 521px;
+	height: 234px;
+	width: 100%;
+	border-top: 35px solid #D8D8D8;
+	background-color: #868784;
+	padding-top: 45px;
+}
+
+#bbutton1{
+	width: 70px;
+	height: 200px;
+	background-color:black;
+	position: absolute;
+	left: 1170px;
+	top: 30px;
+	border-radius: 50px;
+	border: 6px solid #C4C2C2;
+	padding:3px;
+	padding-top: 8px;
+}
+
+#bbutton1>div {
+	width: 50px;
+	height: 50px;
+	border: 2px solid white;
+	border-radius: 50px;
+	float: left;
+	color: white;
+	padding-top: 5px;
+	text-align: center;
+	cursor: pointer;
+	font-size: 10px;
+	margin-top: 5px;
+}
+
+#bbutton1>div>div {
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	border: 1px solid white;
+	position: relative;
+	top: -38px;
+	background-color: white;
+}
+
+#bbutton2{
+	width: 70px;
+	height: 200px;
+	background-color:black;
+	position: absolute;
+	left: 1170px;
+	top: 290px;
+	border-radius: 50px;
+	border: 6px solid #C4C2C2;
+	padding:3px;
+	padding-top: 8px;
+}
+
+#bbutton2>div {
+	width: 50px;
+	height: 50px;
+	border: 2px solid white;
+	border-radius: 50px;
+	float: left;
+	color: white;
+	padding-top: 5px;
+	text-align: center;
+	cursor: pointer;
+	font-size: 10px;
+	margin-top: 5px;
+}
+
+#bbutton2>div>div {
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	border: 1px solid white;
+	position: relative;
+	top: -40px;
+	background-color: white;
+}
+
+#bEngineStateBox li::before{
+	content: "●";
+}
+
+#binComLed{
+
+}

@@ -1,0 +1,44 @@
+#threeD {
+	background-color: black;
+	width: 1280px;
+	height: 796px;
+}
+
+#mainneng10 {
+	position: relative;
+	left: 110px;
+	float: left;
+}
+
+#threeDC1 {
+	width: 200px;
+	height: 500px;
+	position: relative;
+	left: -620px;
+	top: 183px;
+	float: left;
+}
+
+#threeDC2 {
+	width: 100px;
+	height: 200px;
+	position: relative;
+	left: -60px;
+	top: -30px;
+	float: left;
+}
+
+#threeDgif{
+	position: relative;
+	width: 1000px;
+    left: 180px;
+    top: 80px;
+}
+
+#threeSpeedBox{
+	color: #00FF00;
+	position: absolute;
+    right: 30px;
+    top: 650px;
+    font-size: 50px;
+}

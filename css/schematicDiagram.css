@@ -1,0 +1,342 @@
+#schematicDiagram img {
+	position: absolute;
+	width: 1280px;
+	height: 800px;
+}
+
+#sdc {
+	z-index: 2;
+	
+}
+
+#sdc2 {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 3;
+}
+
+#values {
+	position: absolute;
+	top: 0px;
+	width: 1280px;
+	height: 800px;
+	z-index: 4;
+}
+
+#value16 {
+	position: absolute;
+	left: 1220px;
+	top: 640px;
+	width: 30px;
+	height: 60px;
+	cursor: pointer;
+}
+
+#value16txt {
+	position: absolute;
+	left: 1120px;
+	top: 700px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+	padding:2px 5px;
+}
+
+#value122 {
+	position: absolute;
+	left: 970px;
+	top: 25px;
+	width: 25px;
+	height: 60px;
+	cursor: pointer;
+}
+
+#value122txt {
+	position: absolute;
+	left: 890px;
+	top: 78px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+	padding:2px 5px;
+}
+
+#value3 {
+	position: absolute;
+	left: 1220px;
+	top: 530px;
+	width: 60px;
+	height: 25px;
+	cursor: pointer;
+}
+
+#value3txt {
+	position: absolute;
+	left: 1085px;
+	top: 570px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+	padding:2px 5px;
+}
+
+#value116 {
+	position: absolute;
+	left: 810px;
+	top: 700px;
+	width: 50px;
+	height: 70px;
+	cursor: pointer;
+}
+
+#value116txt {
+	position: absolute;
+	left: 770px;
+	top: 760px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+	padding:2px 5px;
+}
+
+#value728 {
+	position: absolute;
+	left: 24px;
+	top: 405px;
+	width: 50px;
+	height: 20px;
+	cursor: pointer;
+}
+
+#value728txt {
+	position: absolute;
+	left: 12px;
+	top: 435px;
+	width: 80px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+}
+
+#value118 {
+	position: absolute;
+	left: 751px;
+	top: 120px;
+	width: 70px;
+	height: 25px;
+	cursor: pointer;
+}
+
+#value118txt {
+	position: absolute;
+	left: 690px;
+	top: 150px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+	padding:2px 5px;
+}
+
+#valueMain{
+	position: absolute;
+	width: 94px;
+	height: 47px;
+	top: 67px;
+	left: 904px;
+	cursor: pointer;
+	/* border: 3px solid red; */
+}
+
+#valueMaintxt{
+	position: absolute;
+	border: 2px solid black;
+	top: 116px;
+	left: 855px;
+	padding:2px 5px;
+	background-color:  #FFFFD7;
+	display: none;
+}
+
+#cock2513 {
+	position: absolute;
+	left: 1215px;
+	top: 370px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+
+#cock2513txt {
+	position: absolute;
+	left: 1190px;
+	top: 400px;
+	width: 80px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+}
+
+#cock2512 {
+	position: absolute;
+	left: 1058px;
+	top: 542px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+
+#cock2512txt {
+	position: absolute;
+	left: 1024px;
+	top: 570px;
+	width: 80px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+}
+
+#cock2514 {
+	position: absolute;
+	left: 868px;
+	top: 26px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+
+#cock2514txt {
+	position: absolute;
+	left: 835px;
+	top: 53px;
+	width: 80px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+}
+
+#cock2511 {
+	position: absolute;
+	left: 1053px;
+	top: 592px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+
+#cock2511txt {
+	position: absolute;
+	left: 1020px;
+	top: 620px;
+	width: 80px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+}
+
+#cock2681 {
+	position: absolute;
+	left: 108px;
+	top: 124px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+
+#cock2681txt {
+	position: absolute;
+	left: 77px;
+	top: 150px;
+	width: 80px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+}
+
+#cock2682 {
+	position: absolute;
+	left: 131px;
+	top: 332px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+
+#cock2682txt {
+	position: absolute;
+	left: 100px;
+	top: 360px;
+	width: 80px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: #FFFFD7;
+	text-align: center;
+	display: none;
+}
+
+.confirmBox{
+	display: none;
+	width: 600px;
+	height: 175px;
+	padding: 15px;
+	background-color: white;
+	border: 1px solid rgb(218, 220, 224);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-radius: 5px;
+}
+
+.confirm{
+	width: 80px;
+	height: 40px;
+	background-color:rgb(64, 138, 236);
+	border: 1px solid rgb(218, 220, 224);
+	cursor: pointer;
+	border-radius: 5px;
+	color: white;
+    text-align: center;
+    font-size: larger;
+	padding: 6px;
+	position: absolute;
+    top: 115px;
+    left: 400px;
+}
+
+.cancel{
+	width: 80px;
+	height: 40px;
+	background-color:white;
+	border: 1px solid rgb(218, 220, 224);
+	cursor: pointer;
+	border-radius: 5px;
+	color: black;
+    text-align: center;
+    font-size: larger;
+	padding: 6px;
+	position: absolute;
+	left: 495px;
+    top: 115px;
+}

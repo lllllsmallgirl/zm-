@@ -1,0 +1,143 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	/* Firefox */
+	-webkit-box-sizing: border-box;
+	/* Safari */
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+#container {
+	width: 1280px;
+	margin: 0 auto;
+	/*	background-color: darkblue;  */
+	text-align: left;
+	
+}
+
+#header {
+	height: 142px;
+	background-color:  rgb(0, 103, 153);
+	background-color: yellow;
+}
+
+a {
+	font-size: 22px;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+}
+
+#meau {
+	height: 38px;
+	background-color: rgb(0, 103, 153);
+}
+
+#menuUl {
+	float: left;
+	margin: 0px;
+	list-style: none;
+}
+
+#meau li {
+	height: 38px;
+	float: left;
+	padding-left: 18px;
+	padding-right: 15px;
+	padding-top: 2px;
+	padding-bottom: 5px;
+	text-align: center;
+	line-height: 33px;
+	color: white;
+	font-size: 25px;
+	cursor: pointer;
+	border-right: 2px solid white;
+}
+
+/* NEW------------------------------- */
+#localmenu {
+	/* width: 60px;
+	height: 30px;
+	background-color: rgb(221, 238, 209); */
+	margin: auto;
+	padding: 0%;
+	position: absolute; display: flex;justify-content: space-between; width: 100%;  top: 0px;background-color: rgb(104, 156, 199);
+}
+
+ul {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	display: inline-block；
+	
+}
+
+#localmenu li {
+	height: 34px;
+	/* border: 1px solid rgb(161, 105, 133); */
+	border-right: 2px solid white;
+	float: left;
+	padding-left: 65px;
+	padding-right: 65px;
+	padding-top: 1px;
+	padding-bottom: 0px;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+
+
+#localmenu li:hover{ color: rgb(112, 42, 89); text-decoration: none;background-color: aliceblue;}
+
+/* NEW ------------------------------------- */
+
+#content {
+	width: 100%;
+	height: 795px;
+	position: relative;
+}
+
+#footer {
+	width: 100%;
+	height: 50px;
+}
+
+#condition{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-color: rgb(0, 103, 153);
+	/* width: 120px; */
+	list-style-type: none;
+	display: none;
+	font-size: 25px;
+	color: white;
+	z-index: 5;
+	text-align: center;
+	padding-top: 5px;
+}
+
+#condition li{
+	border-bottom: 1px solid white;
+	padding-left: 10px;
+	padding-right: 11px;
+}
+
+#meau li:hover{
+	background: #adbcec;
+}
+
+#condition li:hover{
+	background: #adbcec;
+}

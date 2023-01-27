@@ -1,0 +1,58 @@
+#hpicture{
+	position: relative;
+}
+#hbridge{
+	position: absolute;
+	top: -755px;
+	left: 558px;
+	width: 182px;
+	height: 83px;
+	filter: alpha(opacity:0);
+	opacity: 0;
+	float: left;
+	cursor: pointer;
+}
+#hcontrolRoom{
+	position: absolute;
+	top: -573px;
+	left: 558px;
+	width: 182px;
+	height: 83px;
+	filter: alpha(opacity:0);
+	opacity: 0;
+	float: left;
+	cursor: pointer;
+}
+#hcontrolPanel{
+	position: absolute;
+	top: -575px;
+	left: 862px;
+	width: 100px;
+	height: 85px;
+	filter: alpha(opacity:0);
+	opacity: 0;
+	float: left;
+	cursor: pointer;
+}
+#hlocal{
+	position: absolute;
+	top: -257px;
+	left: 227px;
+	width: 138px;
+	height: 105px;
+	filter: alpha(opacity:0);
+	opacity: 0;
+	float: left;
+	cursor: pointer;
+}
+#htelegraph{
+	position: absolute;
+	top: -562px;
+	left: 792px;
+	height: 67px;
+	width: 47px;
+	filter: alpha(opacity:0);
+	opacity: 0;
+	float: left;
+	cursor: pointer;
+}

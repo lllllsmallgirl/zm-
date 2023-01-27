@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考试题目选择</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box {
+            margin-top: 3%;
+            margin-left: 10%;
+            margin-bottom: 20%;
+            margin-right: 10%;
+            border-radius: 20px;
+            box-shadow: 10px 10px 50px #888888;
+        }
+
+        #boxhead {
+            height: 10%;
+            padding: 10px;
+            font-size: 40px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgb(171, 168, 168);
+        }
+
+        #boxcontent {
+            height: 80%;
+            padding: 20px;
+        }
+
+        #content {
+            background-color: #d8d7d7;
+            width: 720px;
+            height: 680px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            font-size: 25px;
+        }
+
+        #q1,
+        #q2,
+        #q3,
+        #q4,
+        #q5,
+        #q6 {
+            /* font-size: 18px; */
+            /* cursor: pointer; */
+            /* width: 100%; */
+            height: 110px;
+            padding-left: 40px;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            border-bottom: 3px solid white;
+
+        }
+
+        #q1:hover,
+        #q2:hover,
+        #q3:hover,
+        #q4:hover,
+        #q5:hover,
+        #q6:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+
+
+
+
+        #boxfoot {
+            /* background-color: black; */
+            height: 75px;
+        }
+
+        #tijiao {
+            width: 100px;
+            height: 50px;
+            font-size: 25px;
+            color: white;
+            border: #589EF8;
+            border-radius: 5px;
+            position: relative;
+            left: 598px;
+            top: 6px;
+            cursor: pointer;
+            background-color: #589EF8;
+        }
+
+
+        #tijiao:hover {
+            background-color: #77b1f9;
+        }
+
+        @media only screen and (max-width: 500px) {
+            body {
+                display: block;
+            }
+
+            #box {
+                margin-top: 3%;
+                margin-left: 10%;
+                margin-bottom: 20%;
+                margin-right: 10%;
+                box-shadow: 0px 0px 20px #888888;
+
+            }
+
+            #boxhead {
+                font-size: 30px;
+            }
+
+            #content {
+                width: 100%;
+                height: 10%;
+                font-size: 18px;
+
+            }
+
+            #q1,
+            #q2,
+            #q3,
+            #q4,
+            #q5,
+            #q6 {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            #tijiao {
+                left: 98px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="boxhead">&nbsp&nbsp考试题目选择：</div>
+        <div id="boxcontent">
+            <div id="content">
+                <div id="q1">题目一：主机备车操作</div>
+                <div id="q2">题目二：主机操纵位置切换操作（驾驶台切换到集控室）</div>
+                <div id="q3">题目三：驾驶台遥控操作（主机启停）</div>
+                <div id="q4">题目四：集控室遥控操作（主机启停）</div>
+                <div id="q5">题目五：机旁应急操作（主机启停）</div>
+                <div id="q6">题目六：紧急停车操作</div>
+            </div>
+        </div>
+        <div id="boxfoot">
+            <button id="tijiao">提交</button>
+        </div>
+
+
+    </div>
+    <script src="./pingfen.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>船舶柴油主机遥控系统虚拟仿真实验</title>
+	<link rel="icon" type="image/png" href="img/dlmutou.png" />
+	<link rel="stylesheet" href="css/common.css" type="text/css" />
+	<link rel="stylesheet" href="css/bridge.css" type="text/css" />
+	<!-- <link rel="stylesheet" href="css/controlPanel.css" type="text/css" /> -->
+	<link rel="stylesheet" href="css/controlRoom.css" type="text/css" />
+	<link rel="stylesheet" href="css/homepage.css" type="text/css" />
+	<link rel="stylesheet" href="css/threeD.css" type="text/css" />
+	<link rel="stylesheet" href="css/telegraph.css" type="text/css" />
+	<link rel="stylesheet" href="css/local.css" type="text/css" />
+	<link rel="stylesheet" href="css/schematicDiagram.css" type="text/css" />
+	<link rel="stylesheet" href="css/diagram.css" type="text/css" />
+	<link rel="stylesheet" href="css/governor.css" type="text/css" />
+	<link rel="stylesheet" href="css/regulator.css" type="text/css" />
+	<link rel="stylesheet" href="css/alarm.css" type="text/css" />
+
+</head>
+
+
+<body>
+	<div id="container">
+		<div id="header">
+			<img src="img/header1.png" width="100%" />
+		</div>
+		<div id="meau">
+			<ul id="menuUl">
+				<li id="acondition">系统设置</li>
+				<li id="ahomepage">结构总览</li>
+				<li id="abridge">驾驶台</li>
+				<li id="acontrolRoom">集控室</li>
+				<li id="atelegraph">集控车钟</li>
+				<li id="agovernor">调速器</li>
+				<li id="alocal">机旁控制</li>
+				<li id="aschematicDiagram">气动操纵</li>
+				<li id="adiagram">状态曲线</li>
+				<li id="athreeD">主机模型</li>
+				<!-- <li id="aexam"><a href="./reference.html" style="font-size: 25px;" target="blank">参考试题</a> </li> -->
+				<!-- <li id="acontrolPanel">控制面板</li> -->
+			</ul>
+		</div>
+
+		<div id="content">
+			<div id="homepage">
+				<img src="img/mainselect.jpeg" width="100%" height="795px" usemap="#mainEngine" />
+				<div id="hpicture">
+					<img id="hbridge" src="img/bridgeed.png">
+					<img id="hcontrolRoom" src="img/controlRoomed.png" />
+					<!-- <img id="hcontrolPanel" src="img/controlPaneled.bmp" /> -->
+					<img id="hlocal" src="img/localed.bmp" />
+					<img id="htelegraph" src="img/maininterface_fuel_back1.bmp" />
+				</div>
+			</div>
+
+			<!--          驾控室部分               -->
+			<div id="bridge">
+				<div id="bWorkingCondition1">
+					<div id="bStandBy">FWE</div>
+					<div id="bDeadband">Warnning</div>
+					<div id="bBridge">Bridge</div>
+					<div id="bEngReady">Eng N. Ready</div>
+					<div id="bSystemReady">System N. Ready</div>
+				</div>
+				<div id="bPanel">
+					<canvas id="bCanvas" width="900px" height="600px">你的浏览器不支持canvas</canvas>
+					<img id="bMERPMPointer" src="img/pointer.png" height="130px" />
+					<img id="bStartAirPressPointer" src="img/pointer.png" height="100px" />
+					<img id="bActuatorPosFeedbackPointer" src="img/pointer.png" height="100px" />
+					<div id="bMERPM">0 RPM</div>
+					<div id="bStartAirPress">0 bar</div>
+					<div id="bActuatorPosFeedback">0 %</div>
+					<div id="bState">Stopping</div>
+
+					<!--          驾驶台的电报系统            -->
+					<div id="btelegraphbox">
+						<img id="btelegraph1" src="img/ecr_telegraph_bk - 副本1.jpeg" />
+						<img id="btelegraph1lever" src="img/ecr_telegraph_index.bmp.bmp">
+						<div id="btelegraph1LedBox1">
+							<div class="btelegraph1Led1"></div>
+							<div class="btelegraph1Led1"></div>
+							<div class="btelegraph1Led1"></div>
+							<div class="btelegraph1Led1"></div>
+							<div class="btelegraph1Led1"></div>
+							<div class="btelegraph1Led1"></div>
+							<div class="btelegraph1Led1"></div>
+							<div class="btelegraph1Led1"></div>
+							<div class="btelegraph1Led1"></div>
+							<div class="btelegraph1Led1"></div>
+							<div class="btelegraph1Led1"></div>
+						</div>
+						<div id="btelegraph1LedBox2">
+							<div class="btelegraph1Led2"></div>
+							<div class="btelegraph1Led2"></div>
+							<div class="btelegraph1Led2"></div>
+							<div class="btelegraph1Led2"></div>
+							<div class="btelegraph1Led2"></div>
+							<div class="btelegraph1Led2"></div>
+							<div class="btelegraph1Led2"></div>
+							<div class="btelegraph1Led2"></div>
+							<div class="btelegraph1Led2"></div>
+							<div class="btelegraph1Led2"></div>
+							<div class="btelegraph1Led2"></div>
+						</div>
+						<div id="btelegraphButtonBox1">
+							<!--左边三个按钮-->
+							<div id="bbridge">Bridge
+								<div id="bbridgeLed"></div>
+								<!---->
+							</div>
+							<div id="becr">ECR
+								<div id="btecrLed"></div>
+							</div>
+							<div id="blocal">Local
+								<div id="blocalLed"></div>
+							</div>
+						</div>
+						<div id="btelegraphButtonBox2">
+							<!--右边三个按钮-->
+							<div id="batSea">At sea
+								<div id="batSeaLed"></div>
+							</div>
+							<div id="bstaBy">Sta. by
+								<div id="bstaByLed">
+								</div>
+							</div>
+							<div id="bfwe">FWE
+								<div id="bfweLed"></div>
+							</div>
+						</div>
+						<div id="bemergencyStop">Emergency Stop</div>
+						<div id="btelegraph1Text1">STOP</div>
+					</div>
+					<div id="bbutton1">
+						<div id="bcancelSHD">Cancel SHD
+							<div id="bcancelSHDLed"></div>
+						</div>
+						<div id="bcancelSLD">Cancel SLD
+							<div id="bcancelSLDLed"></div>
+						</div>
+						<div id="bcancelLim">Cancel lim.
+							<div id="bcancelLimLed"></div>
+						</div>
+					</div>
+					<div id="bbutton2">
+						<div id="binCom" style="padding-top: 13px;">In Com.
+							<br /><br />
+							<div id="binComLed"></div>
+						</div>
+						<div id="bsoundOff">Sound off
+							<div id="bsoundOffLed"></div>
+						</div>
+						<div id="balarmAck">Alarm ack.
+							<div id="balarmAckLed"></div>
+						</div>
+					</div>
+
+				</div>
+				<!--驾控台弹出菜单-->
+				<div id="bAlarmBox">
+					<div id="alarmBOX1">
+						<div
+							style="color: yellow;font-weight: bold;margin-bottom: 20px;font-size: 33px;text-align: center;">
+							SAFETY FUNCTION</div>
+						<div id="balarmbox1text" style="left: 35px;position: absolute;">
+							<li>SHD NONE CANCEL</li>
+							<li>SLD NONE CANCEL</li>
+							<li id="SHDC">SHD CANCELABLE</li>
+							<li id="SLDC">SLD CANCELABLE</li>
+							<li id="SHDA">SHD ACTIVE</li>
+							<li id="SLDA">SLD ACTIVE</li>
+							<li>OVER SPEED</li>
+							<li>EMERGENCY STOP</li>
+						</div>
+
+					</div>
+					<div id="alarmBOX2">
+						<div
+							style="color: yellow;font-weight: bold;margin-bottom: -1px;font-size: 33px;text-align: center;">
+							OTHER ALARMS</div>
+						<div style="left: 35px; position: absolute;">
+							<li id="startfailure">START FAILURE</li>
+							<li>CONTROL ROOM PANEL FAILURE</li>
+							<li>START BLOCK</li>
+							<li>SAFETY SYSTEM FAILURE</li>
+							<li id="bENR">ENGINE NOT READY</li>
+							<li>TELEGRAPH FAILURE</li>
+							<li>SYSTEM FAILURE</li>
+							<li>GOVERNER FAILURE</li>
+						</div>
+
+					</div>
+					<div id="cAlarmHome">
+						<div class="homeButtons" style="margin: 15px 20px 0px 50px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 50px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" id="cAlarmHomeButton"
+							style="margin: 0px 20px auto 20px;cursor: pointer;">HOME</div>
+					</div>
+				</div>
+				<div id="bLimitersMenu">
+					<div id="bLimitersRPM">
+						<div style="color: yellow;font-size: 33px;text-align: center;">RPM LIMITERS</div>
+						<li><a href="#" style="font-size: 30px;">Max Rpm Limit</a></li>
+						<!--最大转速手动限制-->
+						<li><a href="#" style="font-size: 30px;">Load Program</a></li>
+						<!--负荷限制-->
+						<li><a href="#" style="font-size: 30px;">Critical RPM</a></li>
+						<!--临界转速避让-->
+						<li><a href="#" style="font-size: 30px;">Minimum Rpm Limit</a></li>
+						<!--最低转速限制-->
+						<li><a href="#" style="font-size: 30px;">PID Parameter Setting</a></li>
+						<!---->
+					</div>
+					<div id="bLimitersFUEL">
+						<div style="color: yellow;font-size: 33px;text-align: center;">FUFEL LIMITERS</div>
+						<li>Torque Limiter</li>
+						<li>Scav Air Limiter</li>
+						<li>Manual Fuel Limiter</li>
+					</div>
+					<!--pid窗口-->
+					<div id="bpidParameter">
+						Kp<input type="text" id="Kpx" value="8"
+							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" /><br /> Ki
+						<input type="text" id="Kix" value="0"
+							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" /><br /> Kd
+						<input type="text" id="Kdx" value="1"
+							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" /><br />
+						<input type="button" id="pidSure" value="确定" style="text-align: center;" />
+						<input type="button" id="pidClose" value="关闭" style="text-align: center;" />
+					</div>
+					<!--最大转速设置窗口-->
+					<div id="setManualRpmLimit" style="margin: 0 auto;">
+						<p>请设置最大转速</p>
+						<input type="text" id="ManualRpmLimit" value=""
+							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" /><br />
+						<input type="button" id="ManualRpmLimitSure" value="确定" style="text-align: center;" />
+						<input type="button" id="ManualRpmLimiClose" value="关闭" style="text-align: center;" />
+					</div>
+					<!--负载限制-->
+					<div id="setLoadProgram">
+						<p>是否要设置负荷限制</p>
+						<input type="button" id="setLoadProgramSure" value="确定" style="text-align: center;" />
+						<input type="button" id="setLoadProgramClose" value="关闭" style="text-align: center;" />
+					</div>
+					<!--临界转速-->
+					<div id="setCriticalRPM" style="font-size: 23px;">
+						<p>请设置临界转速的上限和下限</p>
+						上限：<input type="text" id="CriticalRPMmax" value=""
+							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" style="width: 150px;" /><br />
+						下限：<input type="text" id="CriticalRPMmin" value=""
+							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" style="width: 150px;" /><br />
+						<input type="button" id="CriticalRPMSure" value="确定" style="text-align: center;" />
+						<input type="button" id="CriticalRPMClose" value="关闭" style="text-align: center;" />
+					</div>
+					<!--最低转速-->
+					<div id="setMinimumRpmLimit" style="font-size: 23px;">
+						<p>请设置最低转速</p>
+						<input type="text" id="MinimumRpmLimit" value=""
+							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" /><br />
+						<input type="button" id="MinimumRpmLimitSure" value="确定" style="text-align: center;" />
+						<input type="button" id="MinimumRpmLimitClose" value="关闭" style="text-align: center;" />
+					</div>
+					<!--home-->
+					<div id="bLimitersHome">
+						<div class="homeButtons" style="margin: 15px 20px 0px 50px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 50px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" id="bLimitersHomeButton"
+							style="margin: 0px 20px auto 20px;cursor: pointer;">HOME</div>
+					</div>
+				</div>
+
+				<div id="bEngineStateBox">
+					<!--state框  bm1-->
+					<div id="bECRstate">
+						<div style="color: yellow;font-size: 33px;text-align: center;">STATE</div>
+						<li><a href="#" style="font-size: 30px;" id="bm1StartBlocked">Start Blocked</a></li>
+						<li id="bm1ReadyForStart"><span class="circle"></span>Ready For Start</li>
+						<li id="bm1SlowTurning">Slow Turning</li>
+						<li id="bm1Starting">Starting</li>
+						<li id="bm1RepeatedStart">Repeated Start</li>
+						<li id="bm1Runing">Runing</li>
+						<li id="bm1CrashAstern">Crash Astern</li>
+						<li id="bm1Stopping">Stopping</li>
+						<li id="bm1EngineTripped">Engine Tripped</li>
+					</div>
+					<!--start框  bm2-->
+					<div id="bECRstart">
+						<div style="color: yellow;font-size: 33px;text-align: center;">START FAIL/BLOCK</div>
+						<li id="bm23StartsFailed">3 Starts failed</li>
+						<li id="bm2StartTooLong">Start too long</li>
+						<li id="bm2StartAirPressure">Start air pressure low</li>
+						<li id="bm2RPMDectorFail">RPM detector fail</li>
+						<li id="bm2EngineTripped">Engine tripped</li>
+						<li id="bm2EngineNotReady">Engine not ready</li>
+					</div>
+					<!--start框  bm3-->
+					<div id="bECRengine">
+						<div style="color: yellow;font-size: 33px;text-align: center;">ENGINE NOT READY</div>
+						<li>Start air distributor blocked</li>
+						<li>Main start valve blocked</li>
+						<li>Turning gear engaged</li>
+						<li>Governor disconnected</li>
+						<br />
+						<br />
+						<div style="color: yellow;font-size: 33px;text-align: center;">FWE LOOP ABNORMAL</div>
+						<li>Main start valve blocked</li>
+						<li>Control air vented</li>
+						<li>Safety air vented</li>
+					</div>
+					<!--home-->
+					<div id="bEngineStateHome">
+						<div class="homeButtons" style="margin: 15px 20px 0px 50px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 50px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" id="bEngineStateHomeButton"
+							style="margin: 0px 20px auto 20px;cursor: pointer;">HOME</div>
+					</div>
+				</div>
+
+				<!--时序图-->
+				<div id="bseq">
+					<img src="img/时序图.png" />
+					<div class="bseqLed" id="bseqBridge"></div>
+					<div class="bseqLed" id="bseqManualbcr"></div>
+					<div class="bseqLed" id="bseqStopcmd"></div>
+					<div class="bseqLed" id="bseqAheadcmd"></div>
+					<div class="bseqLed" id="bseqAsterncmd"></div>
+					<div class="bseqLed" id="bseqStartBlock"></div>
+					<div class="bseqLed" id="bseqAboveReversingLevel"></div>
+					<div class="bseqLed" id="bseqAheadsv"></div>
+					<div class="bseqLed" id="bseqAsternsv"></div>
+					<div class="bseqLed" id="bseqStopgov"></div>
+					<div class="bseqLed" id="bseqLimitersCanceled"></div>
+					<div class="bseqLed" id="bseqAboveStartLevel"></div>
+					<div class="bseqLed" id="bseqSlowTurningsv"></div>
+					<div class="bseqLed" id="bseqStartsv"></div>
+					<div class="bseqLed" id="bseqRepeatedStart"></div>
+					<div class="bseqLed" id="bseqStartFail"></div>
+					<div class="bseqLed" id="bseqStopsv"></div>
+					<div class="bseqLed" id="bseqLimitersActive"></div>
+					<div class="bseqLed" id="bseqEngineRuningAhead"></div>
+					<div class="bseqLed" id="bseqEngineRuningAstern"></div>
+
+					<!--home-->
+					<div id="bseqHome">
+						<div class="homeButtons" style="margin: 15px 20px 0px 50px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 50px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" id="bseqHomeButton"
+							style="margin: 0px 20px auto 20px;cursor: pointer;">HOME</div>
+					</div>
+				</div>
+				<!--control pos-->
+				<div id="bcontrolPosBox">
+					<canvas id="bcontrolPosCanvas" width="1280px" height="520px">你的浏览器不支持canvas</canvas>
+					<div class="bcpLED" id="bcpPortwing"></div>
+					<div class="bcpLED" id="bcpStbwing"></div>
+					<div class="bcpLED" id="bcpBridge"></div>
+					<div class="bcpLED" id="bcpEcr"></div>
+					<div class="bcpLED" id="bcpEcrManualcontrol"></div>
+					<div class="bcpLED" id="bcpLocalManualcontrol"></div>
+
+					<!--bcphome-->
+					<div id="bcpHome">
+						<div class="homeButtons" style="margin: 15px 20px 0px 50px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 50px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" id="bcpHomeButton" style="margin: 0px 20px auto 20px;cursor: pointer;">
+							HOME</div>
+					</div>
+				</div>
+				<div id="bWorkingCondition2">
+					<div class="operableButton" id="bclear"></div>
+					<div class="operableButton" id="bAlarm">Alarm</div>
+					<div class="operableButton" id="bLimiters"></div>
+					<div class="operableButton" id="bControlPos"></div>
+					<div class="operableButton" id="bMiscMenu"></div>
+					<div class="operableButton" id="bFineTuning"></div>
+					<div class="operableButton" id="bSafetySys"></div>
+					<div class="operableButton" id="bEngineState"></div>
+					<div class="operableButton" id="bEngineMode"></div>
+					<div class="operableButton" id="bSeqDiagram"></div>
+					<div class="operableButton" id="bHome">HOME</div>
+				</div>
+			</div>
+
+			<!--          集控室部分               -->
+			<div id="controlRoom">
+				<div id="cWorkingCondition1">
+					<div id="cStandBy">Stand By</div>
+					<div id="cDeadband">Warnning</div>
+					<div id="cECR">ECR</div>
+					<div id="cEngReady">Eng N. Ready</div>
+					<div id="cSystemReady">System N. Ready</div>
+				</div>
+				<div id="cPanel">
+					<img id="cPanelPicture" src="img/pancel.jpeg" />
+					<canvas id="cCanvas" width="900px" height="600px">你的浏览器不支持canvas</canvas>
+					<canvas id="cCanvas1" width="300px" height="600px">你的浏览器不支持canvas</canvas>
+					<img id="cMERPMPointer" src="img/pointer.png" height="130px" />
+					<img id="cStartAirPressPointer" src="img/pointer.png" height="100px" />
+					<img id="cActuatorPosFeedbackPointer" src="img/pointer.png" height="100px" />
+
+					<div id="cMERPM">0 RPM</div>
+					<div id="cStartAirPress">0 bar</div>
+					<div id="cActuatorPosFeedback">0 %</div>
+					<div id="cState">Stopping</div>
+				</div>
+
+				<!--limiter-->
+				<div id="cLimitersMenu">
+					<div id="cLimitersRPM">
+						<div style="color: yellow;font-size: 33px;text-align: center;">RPM LIMITERS</div>
+						<li>Slowdown</li>
+						<li>Start Setpoint Limit</li>
+						<li id="bManualRMPLimit">Manual Rpm Limit</li>
+						<li>Load Program</li>
+						<li>Acceleration Limit</li>
+						<li>Critical RPM</li>
+						<li>Minimum Run</li>
+						<!-- <li>PID Parameter Setting</li> -->
+					</div>
+					<div id="cLimitersFUEL">
+						<div style="color: yellow;font-size: 33px;text-align: center;">FUEL LIMITERS</div>
+						<li>Torque Limiter</li>
+						<li>Scav Air Limiter</li>
+						<li id="bManualFuelLimit">Manual Fuel Limiter</li>
+					</div>
+					<!--pid窗口-->
+					<div id="cpidParameter">
+						<!-- Kp<input type="text" id="Kpx" value="8"
+							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" /><br /> Ki
+						<input type="text" id="Kix" value="0"
+							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" /><br /> Kd
+						<input type="text" id="Kdx" value="1"
+							onkeyup="this.value=this.value.replace(/[^0-9\.]/g,'')" /><br />
+						<input type="button" id="pidSure" value="确定" />
+						<input type="button" id="pidClose" value="关闭" /> -->
+					</div>
+
+					<!--home-->
+					<div id="cLimitersHome">
+						<div class="homeButtons" style="margin: 15px 20px 0px 50px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 50px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" id="cLimitersHomeButton"
+							style="margin: 0px 20px auto 20px;cursor: pointer;">HOME</div>
+					</div>
+				</div>
+				<div id="safesysbtn">
+					<img src="" data-src="reg/safety1.png" id="safety" alt="">
+					<img src="reg/safe/lt2.png" id="l2" class="cancellight" alt="">
+					<img src="reg/safe/lt3.png" id="l3" class="cancellight" alt="">
+					<img src="reg/safe/lt4.png" id="l4" class="cancellight" alt="">
+					<img src="reg/safe/lt8.png" id="l8" class="cancellight" alt="">
+					<img src="reg/safe/lt9.png" id="l9" class="cancellight" alt="">
+					<img src="reg/safe/lt10.png" id="l10" class="cancellight" alt="">
+					<img src="reg/safe/lt11.png" id="l11" class="cancellight" alt="">
+					<img src="reg/safe/lt12.png" id="l12" class="cancellight" alt="">
+					<img src="reg/safe/lt13.png" id="l13" class="cancellight" alt="">
+					<img src="reg/safe/lt14.png" id="l14" class="cancellight" alt="">
+					<img src="reg/safe/lt15.png" id="l15" class="cancellight" alt="">
+					<img src="reg/safe/lt16.png" id="l16" class="cancellight" alt="">
+					<img src="reg/safe/lt17.png" id="l17" class="cancellight" alt="">
+					<img src="reg/safe/lt18.png" id="l18" class="cancellight" alt="">
+					<img src="reg/safe/lt19.png" id="l19" class="cancellight" alt="">
+					<img src="reg/safe/lt20.png" id="l20" class="cancellight" alt="">
+					<img src="reg/safe/lt21.png" id="l21" class="cancellight" alt="">
+					<img src="reg/light2.png" id="lright1" alt="">
+					<img src="reg/light2.png" id="lright2" alt="">
+					<img src="reg/light2.png" id="lright3" alt="">
+					<img src="reg/light2.png" id="lright4" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight2" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight3" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight4" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight8" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight9" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight10" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight11" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight12" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight13" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight14" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight15" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight16" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight17" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight18" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight19" class="alarmlight" alt="">
+					<img src="reg/alarmlight.png" id="alarmlight20" class="alarmlight" alt="">
+
+					<img src="reg/safe/37.png" id="btn37" alt="">
+					<img src="reg/safe/38.png" id="btn38" alt="">
+				</div>
+
+				<div id="cSafetyBox">
+
+					<div id="cSafetyHome">
+						<div class="homeButtons" style="margin: 15px 20px 0px 50px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 50px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" id="cSafetyHomeButton"
+							style="margin: 0px 20px auto 20px;cursor: pointer;">HOME</div>
+					</div>
+				</div>
+
+				<div id="cAlarmBox">
+					<div id="alarmBOX1">
+						<div
+							style="color: yellow;font-weight: bold;margin-bottom: 20px;font-size: 33px;text-align: center;">
+							SAFETY FUNCTION</div>
+						<li>SHD NONE CANCEL</li>
+						<li>SLD NONE CANCEL</li>
+						<li id="SHDC">SHD CANCELABLE</li>
+						<li id="SLDC">SLD CANCELABLE</li>
+						<li id="SHDA">SHD ACTIVE</li>
+						<li id="SLDA">SLD ACTIVE</li>
+						<li>OVER SPEED</li>
+						<li>EMERGENCY STOP</li>
+					</div>
+					<div id="alarmBOX2">
+						<div
+							style="color: yellow;font-weight: bold;margin-bottom: -1px;font-size: 33px;text-align: center;">
+							OTHER ALARMS</div>
+						<li id="startfailure">START FAILURE</li>
+						<li>CONTROL ROOM PANEL FAILURE</li>
+						<li>START BLOCK</li>
+						<li>SAFETY SYSTEM FAILURE</li>
+						<li>ENGINE NOT READY</li>
+						<li>TELEGRAPH FAILURE</li>
+						<li>SYSTEM FAILURE</li>
+						<li>GOVERNER FAILURE</li>
+					</div>
+					<div id="cAlarmHome">
+						<div class="homeButtons" style="margin: 15px 20px 0px 50px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 50px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" id="cAlarmHomeButton"
+							style="margin: 0px 20px auto 20px;cursor: pointer;">HOME</div>
+					</div>
+				</div>
+
+				<div id="cEngineStateBox">
+					<!--state框  cm1-->
+					<div id="cECRstate">
+						<div style="color: yellow;font-size: 33px;text-align: center;">STATE</div>
+						<li id="cm1StartBlocked">Start Blocked</li>
+						<li id="cm1ReadyForStart">Ready For Start</li>
+						<li id="cm1SlowTurning">Slow Turning</li>
+						<li id="cm1Starting">Starting</li>
+						<li id="cm1RepeatedStart">Repeated Start</li>
+						<li id="cm1Runing">Runing</li>
+						<li id="cm1CrashAstern">Crash Astern</li>
+						<li id="cm1Stopping">Stopping</li>
+						<li id="cm1EngineTripped">Engine Tripped</li>
+					</div>
+					<!--start框  cm2-->
+					<div id="cECRstart">
+						<div style="color: yellow;font-size: 33px;text-align: center;">START FAIL/BLOCK</div>
+						<li id="cm23StartsFailed">Starts failed</li>
+						<li id="cm2StartTooLong">Start too long</li>
+						<li id="cm2StartAirPressure">Start air pressure low</li>
+						<li id="cm2RPMDectorFail">RPM detector fail</li>
+						<li id="cm2EngineTripped">Engine tripped</li>
+						<li id="cm2EngineNotReady">Engine not ready</li>
+					</div>
+					<!--start框  cm3-->
+					<div id="cECRengine">
+						<div style="color: yellow;font-size: 33px;text-align: center;">ENGINE NOT READY</div>
+						<li>Start air distributor blocked</li>
+						<li>Main start valve blocked</li>
+						<li>Turning gear engaged</li>
+						<li>Governor disconnected</li>
+						<br />
+						<div style="color: yellow;font-size: 33px;text-align: center;">FWE LOOP ABNORMAL</div>
+						<li>Main start valve blocked</li>
+						<li>Control air vented</li>
+						<li>Safety air vented</li>
+					</div>
+					<!--home-->
+					<div id="cEngineStateHome">
+						<div class="homeButtons" style="margin: 15px 20px 0px 50px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 50px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" id="cEngineStateHomeButton"
+							style="margin: 0px 20px auto 20px;cursor: pointer;">HOME</div>
+					</div>
+				</div>
+				<!--时序图-->
+				<div id="cseq">
+					<img src="img/时序图.png" />
+					<div class="bseqLed" id="cseqBridge"></div>
+					<div class="bseqLed" id="cseqManualbcr"></div>
+					<div class="bseqLed" id="cseqStopcmd"></div>
+					<div class="bseqLed" id="cseqAheadcmd"></div>
+					<div class="bseqLed" id="cseqAsterncmd"></div>
+					<div class="bseqLed" id="cseqStartBlock"></div>
+					<div class="bseqLed" id="cseqAboveReversingLevel"></div>
+					<div class="bseqLed" id="cseqAheadsv"></div>
+					<div class="bseqLed" id="cseqAsternsv"></div>
+					<div class="bseqLed" id="cseqStopgov"></div>
+					<div class="bseqLed" id="cseqLimitersCanceled"></div>
+					<div class="bseqLed" id="cseqAboveStartLevel"></div>
+					<div class="bseqLed" id="cseqSlowTurningsv"></div>
+					<div class="bseqLed" id="cseqStartsv"></div>
+					<div class="bseqLed" id="cseqRepeatedStart"></div>
+					<div class="bseqLed" id="cseqStartFail"></div>
+					<div class="bseqLed" id="cseqStopsv"></div>
+					<div class="bseqLed" id="cseqLimitersActive"></div>
+					<div class="bseqLed" id="cseqEngineRuningAhead"></div>
+					<div class="bseqLed" id="cseqEngineRuningAstern"></div>
+
+					<!--home-->
+					<div id="cseqHome">
+						<div class="homeButtons" style="margin: 15px 20px 0px 50px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 50px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" id="cseqHomeButton"
+							style="margin: 0px 20px auto 20px;cursor: pointer;">HOME</div>
+					</div>
+				</div>
+				<!--control pos-->
+				<div id="ccontrolPosBox">
+					<canvas id="ccontrolPosCanvas" width="1280px" height="520px">你的浏览器不支持canvas</canvas>
+					<div class="bcpLED" id="ccpPortwing"></div>
+					<div class="bcpLED" id="ccpStbwing"></div>
+					<div class="bcpLED" id="ccpBridge"></div>
+					<div class="bcpLED" id="ccpEcr"></div>
+					<div class="bcpLED" id="ccpEcrManualcontrol"></div>
+					<div class="bcpLED" id="ccpLocalManualcontrol"></div>
+
+					<!--ccphome-->
+					<div id="ccpHome">
+						<div class="homeButtons" style="margin: 15px 20px 0px 50px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 15px 20px 0px 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 50px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" style="margin: 0px 20px auto 20px;"></div>
+						<div class="homeButtons" id="ccpHomeButton" style="margin: 0px 20px auto 20px;cursor: pointer;">
+							HOME</div>
+					</div>
+				</div>
+				<div id="cWorkingCondition2">
+					<div class="operableButton" id="cAlarm"></div>
+					<div class="operableButton" id="cLimiters">Limiters</div>
+					<div class="operableButton" id="cControlPos">Control Pos</div>
+					<div class="operableButton" id="cMiscMenu"></div>
+					<div class="operableButton" id="cFineTuning"></div>
+					<div class="operableButton" id="cSafetySys">Safety Sys</div>
+					<div class="operableButton" id="cEngineState">Engine State</div>
+					<div class="operableButton" id="cEngineMode"></div>
+					<div class="operableButton" id="cSeqDiagram">Seq.Diagram</div>
+					<div class="operableButton" id="cHome">HOME</div>
+				</div>
+			</div>
+
+			<!--          控制面板部分               -->
+			<!-- <div id="controlPanel">
+				<div id="cpBgc">
+					<div id="cpBorder">
+						<div class="cpButtonBox1">
+							<div id="fuelCamAhead">FUEL CAM AHEAD</div>
+							<div id="limiInGovCancel">LIMI. GOV.CANCEL</div>
+							<div id="turnGearEngaged">TURN. GEAR ENGAGED</div>
+							<div id="manStValveInService">MAN ST. VALVE IN SERVICE</div>
+							<div id="goverEngaged">GOVER. ENGAGED</div>
+							<div id="slowDownActive">SLOW DOWN ACTIVE</div>
+							<div id="shutDownActive">SHUT DOWN ACTIVE</div>
+							<div id="fuelCamAstern">FUEL CAM ASTERN</div>
+							<div id="slowTurning">SLOW TURNING</div>
+							<div id="turnGearDiseng">TURN. GEAR DISENG</div>
+							<div id="manStValueBlocked">MAN ST. VALVE BLOCKED</div>
+							<div id="stAirDistribBlocked">ST.AIR DISTRIB BLOCKED</div>
+							<div id="slowDownCancel">SLOW DOWN CANCEL</div>
+							<div id="shutDownCancel">SHUT DOWN CANCEL</div>
+							<div id="bridgeControl">BRIDGE CONTROL</div>
+							<div id="ecrControl">ECR CONTROL</div>
+							<div id="localConreol">LOCAL CONTROL</div>
+							<div id="lampTest1">LAMP TEST</div>
+						</div>
+						<div class="cpButtonBox2">
+							<div id="auxBlower1startRun">AUX BLOWER 1. START RUN</div>
+							<div id="auxBlower1stop">AUX BLOWER 1. STOP</div>
+							<div id="auxBlower2startRun">AUX BLOWER 2. START RUN</div>
+							<div id="auxBlower2stop">AUX BLOWER 2. STOP</div>
+							<div id="auxBlower3startRun">AUX BLOWER 3. START RUN</div>
+							<div id="auxBlower3stop">AUX BLOWER 3. STOP</div>
+							<div id="warnningAuxBlower">WARNNING AUX BLOWER</div>
+							<div id="lampTest2">LAMP TEST</div>
+						</div>
+						<img id="kLogo" src="img/k_logo.bmp" width="80px" />
+						<img id="auxHandle" src="img/auxHandle.png" />
+						<canvas id="cpCanvas" width="250px" height="80px">你的浏览器不支持canvas</canvas>
+						<div id="cpHandleLeft"></div>
+						<div id="cpHandleRight"></div>
+					</div>
+				</div>
+			</div> -->
+
+			<!--          集控室车钟              -->
+			<div id="telegraph">
+				<div id="tbutton1">
+					<div id="tcancelSHD">Cancel SHD
+						<div id="tcancelSHDLed"></div>
+					</div>
+					<div id="tcancelSLD">Cancel SLD
+						<div id="tcancelSLDLed"></div>
+					</div>
+					<div id="tcancelLim">Cancel lim.
+						<div id="tcancelLimLed"></div>
+					</div>
+				</div>
+				<div id="tbutton2">
+					<div id="tinCom">In Com.
+						<div id="tinComLed"></div>
+					</div>
+					<div id="tsoundOff">Sound off
+						<div id="tsoundOffLed"></div>
+					</div>
+					<div id="talarmAck">Alarm ack.
+						<div id="talarmAckLed"></div>
+					</div>
+				</div>
+				<div id="thandlebox">
+					&nbsp;ECR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BRIDGE
+					<img id="thandle" src="img/handle.png" style="transform-origin: 31% 31%;transform:rotate(90deg);" />
+				</div>
+
+				<!--          集控室的电报系统            -->
+				<div id="ttelegraphbox">
+					<img id="ttelegraph1" src="img/ecr_telegraph_bk - 副本1.jpeg" />
+					<img id="ttelegraph1lever" src="img/ecr_telegraph_index.bmp.bmp">
+					<div id="ttelegraph1LedBox1">
+						<div class="ttelegraph1Led1"></div>
+						<div class="ttelegraph1Led1"></div>
+						<div class="ttelegraph1Led1"></div>
+						<div class="ttelegraph1Led1"></div>
+						<div class="ttelegraph1Led1"></div>
+						<div class="ttelegraph1Led1"></div>
+						<div class="ttelegraph1Led1"></div>
+						<div class="ttelegraph1Led1"></div>
+						<div class="ttelegraph1Led1"></div>
+						<div class="ttelegraph1Led1"></div>
+						<div class="ttelegraph1Led1"></div>
+					</div>
+					<div id="ttelegraph1LedBox2">
+						<div class="ttelegraph1Led2"></div>
+						<div class="ttelegraph1Led2"></div>
+						<div class="ttelegraph1Led2"></div>
+						<div class="ttelegraph1Led2"></div>
+						<div class="ttelegraph1Led2"></div>
+						<div class="ttelegraph1Led2"></div>
+						<div class="ttelegraph1Led2"></div>
+						<div class="ttelegraph1Led2"></div>
+						<div class="ttelegraph1Led2"></div>
+						<div class="ttelegraph1Led2"></div>
+						<div class="ttelegraph1Led2"></div>
+					</div>
+					<div id="ttelegraphButtonBox1">
+						<div id="tbridge">Bridge
+							<div id="tbridgeLed"></div>
+						</div>
+						<div id="tecr">ECR
+							<div id="ttecrLed"></div>
+						</div>
+						<div id="tlocal">Local
+							<div id="tlocalLed"></div>
+						</div>
+					</div>
+					<div id="ttelegraphButtonBox2">
+						<div id="tatSea">At sea
+							<div id="tatSeaLed"></div>
+						</div>
+						<div id="tstaBy">Sta. by
+							<div id="tstaByLed"></div>
+						</div>
+						<div id="tfwe">FWE
+							<div id="tfweLed"></div>
+						</div>
+					</div>
+					<div id="temergencyStop">Emergency Stop</div>
+					<div id="ttelegraph1Text1">STOP</div>
+					<img id="ttelegraph2" src="img/ecrTelegraph.png" />
+					<img id="ttelegraph2lever" src="img/ecrLever.bmp" />
+				</div>
+				<div id="ttelegraph2watch">STOP</div>
+			</div>
+
+			<!--          机旁               -->
+			<div id="local">
+				<div id="localmenu">
+					<ul id="localmenuul">
+						<li id="lm_mainsys">结构总览</li>
+						<li id="lm_panel">控制面板</li>
+						<li id="lm_gov">调速器切换</li>
+						<li id="lm_opwheel">调油手轮</li>
+						<li id="lm_tele">辅车钟</li>
+						<li id="lm_2d">二维操作</li>
+
+					</ul>
+
+				</div>
+				<!-- 机旁内部的几个页面 -->
+				<div id="linside">
+					<div id="lmainsys" style="display: block;">
+						<img src="" data-src="img/mainsys.png" width="100%" height="795px" id="sanweijipang" />
+						<div id="lpicture">
+							<img src="img/panel_b.PNG" width="55px" height="139px"
+								style="cursor: pointer; position: absolute; left: 564px;top: 232px; " id="white1">
+							<img src="img/gov_b.png"
+								style="cursor: pointer; position: absolute; left: 732px;top: 425px; " id="white2">
+							<img src="img/underpanel_b.png"
+								style="cursor: pointer; position: absolute; left: 530px;top: 367px; " id="white3">
+							<img src="img/opwheel_b.png"
+								style="cursor: pointer; position: absolute; left: 650px;top: 378px; " id="white4">
+						</div>
+					</div>
+					<div id="lpanel" style="display: none;">
+						<img src="" data-src="img/panel.png" width="100%" height="795px" id="panel" />
+						<img src="" data-src="img/panel_s.png" width="100%" height="795px" id="panel_s"
+							style="display: none;">
+						<img src="" data-src="img/panel_1.png" width="100%" height="795px" id="panel_1"
+							style="display: none;">
+						<img src="" data-src="img/panel_2.png" width="100%" height="795px" id="panel_2"
+							style="display: none;">
+						<img src="" data-src="img/panel_3.png" width="100%" height="795px" id="panel_3"
+							style="display: none;">
+						<img src="" data-src="img/panel_4.png" width="100%" height="795px" id="panel_4"
+							style="display: none;">
+						<img src="" data-src="img/panel_5.png" width="100%" height="795px" id="panel_5"
+							style="display: none;">
+						<img src="img/pstart.png" style="cursor: pointer; position: absolute; left: 631px;top: 408px;"
+							id="pstart" />
+						<img src="img/pstop.png" style="cursor: pointer; position: absolute;left: 611px;top: 499px; "
+							id="pstop" />
+						<img src="img/pswitch1.png" style="cursor: pointer; position: absolute;left: 785px;top: 352px; "
+							id="pswitch1" />
+						<img src="img/pswitch2.png"
+							style="cursor: pointer; display: none; position: absolute;left: 740px;top: 312px; "
+							id="pswitch2" />
+
+						<img src="img/pswitch3.png" style="cursor: pointer; position: absolute;left: 806px;top: 260px; "
+							id="pswitch3" />
+						<img src="img/pswitch4.png"
+							style="cursor: pointer; display: none; position: absolute;left: 742px;top: 219px; "
+							id="pswitch4" />
+
+
+
+						<!-- <img src="img/pswitch2.png" style="position: absolute;left: 458px;top: 336.5px; "id="pswitch22"/> -->
+						<button id="touming"
+							style="cursor: pointer; width: 30px;height: 30px; position: absolute;left: 815px;top: 328.5px;filter: alpha(opacity：0);opacity: 0;">123</button>
+						<button id="touming2"
+							style="cursor: pointer; width: 30px;height: 30px;  position: absolute;left: 807px;top: 382.5px; filter: alpha(opacity：0);opacity: 0;">123</button>
+
+						<button id="touming3"
+							style="cursor: pointer; width: 30px;height: 30px; position: absolute;left: 827px;top: 240px; filter: alpha(opacity：0);opacity: 0;">123</button>
+						<button id="touming4"
+							style="cursor: pointer; width: 30px;height: 30px;  position: absolute;left: 834px;top: 278px; filter: alpha(opacity：0);opacity: 0;">123</button>
+
+
+
+						<div id="plbox1">
+							<div id="plbox1box">
+								<img id="plpancel1" src="img/lPancel1.png" />
+								<div id="plbox1Ledbox">
+									<div id="plaheadLed"></div>
+									<div id="plasternLed"></div>
+									<div id="plshutDownLed"></div>
+									<div id="plbridgeControlLed"></div>
+									<div id="plTurningGearEngagedLed"></div>
+									<div id="plcontrolRoomControlLed"></div>
+									<div id="plauxBlowerRunningLed"></div>
+									<div id="plemergencyControlLed"></div>
+								</div>
+								<div class="poperableLed" id="plbuttonCancelShutDown"></div>
+								<div class="poperableLed" id="plbuttonLampTest"></div>
+								<canvas id="plbox1canvas" width="360" height="250">你的浏览器不支持canvas</canvas>
+								<img id="pllogo" src="img/logo.png" />
+								<img id="plpointer" src="img/pointer1.png" />
+							</div>
+						</div>
+					</div>
+					<div id="lgov" style="display: none;">
+						<img src="img/gov.png" width="100%" height="795px" />
+						<img src="img/wheelswitch.png"
+							style="cursor: pointer; position: absolute; left: 946px;top: 278px; " id="wheelswitch">
+						<img src="img/impactwheel.png"
+							style="cursor: pointer; position: absolute; left: 944px;top: 377px; " id="impactwheel">
+						<img src="img/zi1red.png" style="position: absolute; left: 970px;top: 264px;">
+						<img src="img/zi2.png" style="position: absolute; left: 932px;top: 264px;" id="2">
+						<!-- <img src="img/zi2_1.png" style="display: none; position: absolute; left: 830px;top: 264px;" id="2_1"> -->
+						<img src="img/zi3red.png" style="position: absolute; left: 939px;top: 498px;" id="3">
+
+
+
+						<div id="glbox1">
+							<div id="glbox1box">
+								<img id="glpancel1" src="img/lPancel1.png" />
+								<div id="glbox1Ledbox">
+									<div id="glaheadLed"></div>
+									<div id="glasternLed"></div>
+									<div id="glshutDownLed"></div>
+									<div id="glbridgeControlLed"></div>
+									<div id="glTurningGearEngagedLed"></div>
+									<div id="glcontrolRoomControlLed"></div>
+									<div id="glauxBlowerRunningLed"></div>
+									<div id="glemergencyControlLed"></div>
+								</div>
+								<div class="goperableLed" id="glbuttonCancelShutDown"></div>
+								<div class="goperableLed" id="glbuttonLampTest"></div>
+								<canvas id="glbox1canvas" width="360" height="250">你的浏览器不支持canvas</canvas>
+								<img id="gllogo" src="img/logo.png" />
+								<img id="glpointer" src="img/pointer1.png" />
+							</div>
+						</div>
+					</div>
+					<div id="lopwheel" style="display: none;">
+						<img src="img/opwheel.png" width="100%" height="795px" />
+						<img src="" data-src="img/wheelstart.png"
+							style="cursor: pointer; position: absolute; left: 868px;top: 235px;display: none; "
+							id="wheelstart">
+						<img src="" data-src="img/oil1.png"
+							style="cursor: pointer; position: absolute; left: 867px;top: 234px; display: none;"
+							id="wheeloil1">
+						<img src="" data-src="img/oil1.5.png"
+							style="cursor: pointer; position: absolute; left: 867px;top: 234px; display: none;"
+							id="wheeloil1_5">
+						<img src="" data-src="img/oil2.png"
+							style="cursor: pointer; position: absolute; left: 867px;top: 234px; display: none;"
+							id="wheeloil2">
+						<img src="" data-src="img/oil3.png"
+							style="cursor: pointer; position: absolute; left: 867px;top: 234px; display: none;"
+							id="wheeloil3">
+						<img src="" data-src="img/oil4.png"
+							style="cursor: pointer; position: absolute; left: 867px;top: 234px; display: none;"
+							id="wheeloil4">
+
+
+						<button id="wheeltouming"
+							style="cursor: e-resize; width: 100px;height: 160px; position: absolute;left: 989px;top: 489px; filter: alpha(opacity：0);opacity: 0;">123</button>
+						<button id="wheeltoumingleft"
+							style="cursor: w-resize; width: 100px;height: 160px; position: absolute;left: 889px;top: 489px; filter: alpha(opacity：0);opacity: 0;">321</button>
+
+
+						<div id="olbox1">
+							<div id="olbox1box">
+								<img id="olpancel1" src="img/lPancel1.png" />
+								<div id="olbox1Ledbox">
+									<div id="olaheadLed"></div>
+									<div id="olasternLed"></div>
+									<div id="olshutDownLed"></div>
+									<div id="olbridgeControlLed"></div>
+									<div id="olTurningGearEngagedLed"></div>
+									<div id="olcontrolRoomControlLed"></div>
+									<div id="olauxBlowerRunningLed"></div>
+									<div id="olemergencyControlLed"></div>
+								</div>
+								<div class="ooperableLed" id="olbuttonCancelShutDown"></div>
+								<div class="ooperableLed" id="olbuttonLampTest"></div>
+								<canvas id="olbox1canvas" width="360" height="250">你的浏览器不支持canvas</canvas>
+								<img id="ollogo" src="img/logo.png" />
+								<img id="olpointer" src="img/pointer1.png" />
+							</div>
+						</div>
+					</div>
+					<div id="ltele" style="display: none;">
+						<img src="img/back.png" id="back" alt="">
+						<div id="tlbox1">
+							<div id="tlbox1box">
+								<img id="tlpancel1" src="img/lPancel1.png" />
+								<div id="tlbox1Ledbox">
+									<div id="tlaheadLed"></div>
+									<div id="tlasternLed"></div>
+									<div id="tlshutDownLed"></div>
+									<div id="tlbridgeControlLed"></div>
+									<div id="tlTurningGearEngagedLed"></div>
+									<div id="tlcontrolRoomControlLed"></div>
+									<div id="tlauxBlowerRunningLed"></div>
+									<div id="tlemergencyControlLed"></div>
+								</div>
+								<div class="toperableLed" id="tlbuttonCancelShutDown"></div>
+								<div class="toperableLed" id="tlbuttonLampTest"></div>
+								<canvas id="tlbox1canvas" width="360" height="250">你的浏览器不支持canvas</canvas>
+								<img id="tllogo" src="img/logo.png" />
+								<img id="tlpointer" src="img/pointer1.png" />
+							</div>
+						</div>
+						<div id="plbox2">
+							<div id="plbox2box">
+								<div id="plbox2box1">
+									<div id="plwrWay">
+										Wr.<br />way
+										<div id="plwrWayled"></div>
+									</div>
+									<div id="pllaTest">
+										La.<br />test
+										<div id="pllaTestled"></div>
+									</div>
+								</div>
+								<div id="plbox2box2">
+									<div id="plbcr">
+										BCR
+										<div id="plbcrled"></div>
+									</div>
+									<div id="plecr">
+										ECR
+										<div id="plecrled"></div>
+									</div>
+									<div id="plloc">
+										Loc.
+										<div id="pllocled"></div>
+									</div>
+								</div>
+								<div id="plbox2box3">
+									<div id="plnavFull">
+										Nav<br />Full
+										<div class="plspeedButtonLed" id="plnavFullled"></div>
+									</div>
+									<div id="plfull">
+										Full
+										<div class="plspeedButtonLed" id="plfullled"></div>
+									</div>
+									<div id="plhalf">
+										Half
+										<div class="plspeedButtonLed" id="plhalfled"></div>
+									</div>
+									<div id="plslow">
+										Slow
+										<div class="plspeedButtonLed" id="plslowled"></div>
+									</div>
+									<div id="pldeSlow">
+										De.<br />Slow
+										<div class="plspeedButtonLed" id="pldeSlowled"></div>
+									</div>
+									<div id="plstop">
+										Stop
+										<div class="plspeedButtonLed" id="plstopled"></div>
+									</div>
+									<div id="pldeSlow1">
+										De.<br />Slow
+										<div class="plspeedButtonLed" id="pldeSlow1led"></div>
+									</div>
+									<div id="plslow1">
+										Slow
+										<div class="plspeedButtonLed" id="plslow1led"></div>
+									</div>
+									<div id="plhalf1">
+										Half
+										<div class="plspeedButtonLed" id="plhalf1led"></div>
+									</div>
+									<div id="plfull1">
+										Full
+										<div class="plspeedButtonLed" id="plfull1led"></div>
+									</div>
+									<div id="plemAst">
+										Em.<br />Ast
+										<div class="plspeedButtonLed" id="plemAstled"></div>
+									</div>
+								</div>
+
+								<div id="plbox2box4">
+									<div id="platSea">
+										At<br />Sea
+										<div id="platSealed"></div>
+									</div>
+									<div id="plstBy">
+										St.<br />By
+										<div id="plstByled"></div>
+									</div>
+									<div id="plfwe">
+										FWE
+										<div id="plfweled"></div>
+									</div>
+								</div>
+								<div id="plbox2boxStop">
+									EMERGENCY<br />STOP
+									<div id="plemergencyStop"></div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="l2d" style="display: none;">
+						<div id="lbox1">
+							<div id="lbox1box">
+								<img id="lpancel1" src="img/lPancel1.png" />
+								<div id="lbox1Ledbox">
+									<div id="laheadLed"></div>
+									<div id="lasternLed"></div>
+									<div id="lshutDownLed"></div>
+									<div id="lbridgeControlLed"></div>
+									<div id="lTurningGearEngagedLed"></div>
+									<div id="lcontrolRoomControlLed"></div>
+									<div id="lauxBlowerRunningLed"></div>
+									<div id="lemergencyControlLed"></div>
+								</div>
+								<div class="operableLed" id="lbuttonCancelShutDown"></div>
+								<div class="operableLed" id="lbuttonLampTest"></div>
+								<canvas id="lbox1canvas" width="360" height="250">你的浏览器不支持canvas</canvas>
+								<img id="llogo" src="img/logo.png" />
+								<img id="lpointer" src="img/pointer1.png" />
+							</div>
+						</div>
+						<div id="lbox2">
+							<div id="lbox2box">
+								<div id="lbox2box1">
+									<div id="lwrWay">
+										Wr.<br />way
+										<div id="lwrWayled"></div>
+									</div>
+									<div id="llaTest">
+										La.<br />test
+										<div id="llaTestled"></div>
+									</div>
+								</div>
+								<div id="lbox2box2">
+									<div id="lbcr">
+										BCR
+										<div id="lbcrled"></div>
+									</div>
+									<div id="lecr">
+										ECR
+										<div id="lecrled"></div>
+									</div>
+									<div id="lloc">
+										Loc.
+										<div id="llocled"></div>
+									</div>
+								</div>
+								<div id="lbox2box3">
+									<div id="lnavFull">
+										Nav<br />Full
+										<div class="lspeedButtonLed" id="lnavFullled"></div>
+									</div>
+									<div id="lfull">
+										Full
+										<div class="lspeedButtonLed" id="lfullled"></div>
+									</div>
+									<div id="lhalf">
+										Half
+										<div class="lspeedButtonLed" id="lhalfled"></div>
+									</div>
+									<div id="lslow">
+										Slow
+										<div class="lspeedButtonLed" id="lslowled"></div>
+									</div>
+									<div id="ldeSlow">
+										De.<br />Slow
+										<div class="lspeedButtonLed" id="ldeSlowled"></div>
+									</div>
+									<div id="lstop">
+										Stop
+										<div class="lspeedButtonLed" id="lstopled"></div>
+									</div>
+									<div id="ldeSlow1">
+										De.<br />Slow
+										<div class="lspeedButtonLed" id="ldeSlow1led"></div>
+									</div>
+									<div id="lslow1">
+										Slow
+										<div class="lspeedButtonLed" id="lslow1led"></div>
+									</div>
+									<div id="lhalf1">
+										Half
+										<div class="lspeedButtonLed" id="lhalf1led"></div>
+									</div>
+									<div id="lfull1">
+										Full
+										<div class="lspeedButtonLed" id="lfull1led"></div>
+									</div>
+									<div id="lemAst">
+										Em.<br />Ast
+										<div class="lspeedButtonLed" id="lemAstled"></div>
+									</div>
+								</div>
+
+								<div id="lbox2box4">
+									<div id="latSea">
+										At<br />Sea
+										<div id="latSealed"></div>
+									</div>
+									<div id="lstBy">
+										St.<br />By
+										<div id="lstByled"></div>
+									</div>
+									<div id="lfwe">
+										FWE
+										<div id="lfweled"></div>
+									</div>
+								</div>
+								<div id="lbox2boxStop">
+									EMERGENCY<br />STOP
+									<div id="lemergencyStop"></div>
+								</div>
+							</div>
+						</div>
+						<div id="lhandleBox1">
+							&nbsp; REMOTE &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; LOCAL
+							<img id="lhandle1" src="img/handle.png" />
+						</div>
+						<div id="lhandleBox2">
+							&nbsp; ASTERN &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AHEAD
+							<img id="lhandle2" src="img/handle.png" />
+						</div>
+						<div id="lhandleBox3">
+							LOCK &nbsp;&nbsp;&nbsp; UNLOCK
+							<img id="lhandle3" src="img/handle.png" />
+						</div>
+						<div id="lbuttonStartBox">
+							START
+							<div class="operableLed" id="lbuttonStart"></div>
+						</div>
+						<div id="lbuttonStopBox">
+							STOP
+							<div class="operableLed" id="lbuttonStop"></div>
+						</div>
+						<img id="lwheel1" src="img/lwheelx.png" />
+						<img id="lwheel2" src="img/lwheel2.bmp" />
+						<img id="lpancel" src="img/localPancel.png" />
+						<img id="lshoulun" src="img/锁轮.png" />
+						<canvas id="lwheel2canvas" width="140" height="210">你的浏览器不支持canvas</canvas>
+						<canvas id="lwheel1canvas" width="140" height="11">你的浏览器不支持canvas</canvas>
+						<div id="lwheel1Left"></div>
+						<div id="lwheel1Right"></div>
+						<div id="lwheel2Left"></div>
+						<div id="lwheel2Right"></div>
+						<div id="lhandwheel">Governor Changeover</div>
+						<div id="lhandwheelDis">DISCON</div>
+						<div id="lhandwheelCon">CONNECTED</div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+
+			<!--          输入输出曲线               -->
+			<div id="diagram">
+				<div id="line-title1">油门刻度</div>
+				<div id="flot-placeholder1"></div>
+				<div id="line-title2">主机转速</div>
+				<div id="flot-placeholder2"></div>
+			</div>
+
+			<!--          气动逻辑部分               -->
+			<div id="schematicDiagram">
+				<img id="schematicDiagramPicture" src="img/00.png" height="auto" />
+				<img id="yunxing" src="" data-src="img/yunxing.png" alt=""
+					style="display: none;position:absolute; height:96px ;width:154px; left:70px; top:484px; z-index:5;">
+				<img id="ahead" src="img/ahead.png" alt="" style="display: block;position:absolute;     height: 78px;
+					width: 67px;
+					left: 321px;
+					top: 516px; z-index:5;">
+				<img id="bridgecontrol" src="img/bridgecontrol.png"
+					style="height: 246px;width: 776px;position: absolute;left: 5px;top: 553px; display:none;" alt="">
+				<canvas id="sdc" width="1280" height="800">你的浏览器不支持canvas</canvas>
+				<canvas id="sdc2" width="1280" height="800">你的浏览器不支持canvas</canvas>
+
+				<!--阀门盒子-->
+				<div id="values">
+					<div id="value16"></div>
+					<div id="value16txt">点击起动</div>
+					<div id="value122"></div>
+					<div id="value122txt">点击起动</div>
+					<div id="value3"></div>
+					<div id="value3txt">点击起动</div>
+					<div id="value116"></div>
+					<div id="value116txt">点击脱开盘车机</div>
+					<div id="valueMain"></div>
+					<div id="valueMaintxt">点击打开主起动阀</div>
+					<div id="cock2513"></div>
+					<div id="cock2513txt">点击关闭</div>
+					<div id="cock2511"></div>
+					<div id="cock2511txt">点击关闭</div>
+					<div id="cock2512"></div>
+					<div id="cock2512txt">点击关闭</div>
+					<div id="cock2514"></div>
+					<div id="cock2514txt">点击关闭</div>
+					<div id="cock2681"></div>
+					<div id="cock2681txt">点击关闭</div>
+					<div id="cock2682"></div>
+					<div id="cock2682txt">点击关闭</div>
+					<div id="value728"></div>
+					<div id="value728txt">点击关闭</div>
+					<div id="value118"></div>
+					<div id="value118txt">点击起动</div>
+					<div class="confirmBox" id="value16confirmBox">
+						<h2>气动操作</h2><br />
+						<p id="valve16ComfirmTxt"> 是否起动空气控制阀</p>
+						<div class="confirm" id="valve16Comfirm">确定</div>
+						<div class="cancel" id="valve16Cancel">取消</div>
+					</div>
+					<div class="confirmBox" id="value3confirmBox">
+						<h2>气动操作</h2><br />
+						<p id="valve3ComfirmTxt"> 是否起动进排气空气阀</p>
+						<div class="confirm" id="valve3Comfirm">确定</div>
+						<div class="cancel" id="valve3Cancel">取消</div>
+					</div>
+					<div class="confirmBox" id="value122confirmBox">
+						<h2>气动操作</h2><br />
+						<p id="valve122ComfirmTxt"> 是否起动安全阀</p>
+						<div class="confirm" id="valve122Comfirm">确定</div>
+						<div class="cancel" id="valve122Cancel">取消</div>
+					</div>
+					<div class="confirmBox" id="valveMainconfirmBox">
+						<h2>气动操作</h2><br />
+						<p id="valveMainComfirmTxt"> 是否打开主起动阀</p>
+						<div class="confirm" id="valveMainComfirm">确定</div>
+						<div class="cancel" id="valveMainCancel">取消</div>
+					</div>
+					<div class="confirmBox" id="value116confirmBox">
+						<h2>气动操作</h2><br />
+						<p id="valve116ComfirmTxt"> 是否脱开盘车机</p>
+						<div class="confirm" id="valve116Comfirm">确定</div>
+						<div class="cancel" id="valve116Cancel">取消</div>
+					</div>
+					<div class="confirmBox" id="value118confirmBox">
+						<h2>气动操作</h2><br />
+						<p id="valve118ComfirmTxt"> 是否起动空气分配器控制阀</p>
+						<div class="confirm" id="valve118Comfirm">确定</div>
+						<div class="cancel" id="valve118Cancel">取消</div>
+					</div>
+				</div>
+			</div>
+
+			<!--          3D模型部分               -->
+			<div id="threeD">
+				<!-- <img id="mainneng10" src="img/maineng10.bmp" />
+					<canvas id="threeDC1">你的浏览器不支持canvas</canvas>
+					<canvas id="threeDC2">你的浏览器不支持canvas</canvas> -->
+				<img id="threeDgif" src="">
+				<div id="threeSpeedBox">转速：<span id="threeSpeed"></span> RPM </div>
+			</div>
+			<!--            调速器                 -->
+			<div id="governor">
+				<img src="img/government.png" height="100%" width="100%">
+				<img src="reg/reg_up1.png" id="up1">
+				<img src="reg/reg_down1.png" id="down1">
+				<img src="reg/reg_up2.png" id="up2">
+				<img src="reg/reg_down2.png" id="down2">
+				<img src="reg/reg_save.png" id="save">
+				<img src="reg/lock.png" id="lock">
+				<img src="reg/opcode0.png" id="opcode0" alt="">
+				<img src="reg/opcode1.png" id="opcode1" alt="">
+				<img src="reg/reg_up3.png" id="up3" alt="">
+				<img src="reg/reg_down3.png" id="down3" alt="">
+				<div id="reg_num"></div>
+				<div id="reg_value"></div>
+				<div id="act_num"></div>
+				<div id="act_value"></div>
+				<div id="light1_1"></div>
+				<div id="light1_2"></div>
+				<div id="light2_1"></div>
+				<div id="light2_2"></div>
+				<div id="light2_3"></div>
+				<div id="light2_4"></div>
+				<div id="light2_5"></div>
+
+
+			</div>
+
+			<!--          工况                     -->
+			<div id="condition">
+				<li id="conBefore">原始工况</li>
+				<li id="conReadyC">备车完毕</li>
+				<li id="conOnSea">主机运行</li>
+				<li id="conProblem">故障设置</li>
+			</div>
+			<div id="problem">
+				<span class="problem-title1">停车故障:</span>
+				<span class="problem-title2">减速故障:</span>
+				<div id="probtn">
+					<button id="proConfirm">确认设置</button>
+					<button id="proCancel">取消故障</button>
+				</div>
+				<div id="problembox">
+					<div id="problembox1">
+						<label style="width: 100%;">
+							<div><input type="checkbox" id="box" class="box">主机滑油进口压力低</div>
+						</label>
+						<label style="width: 100%;">
+							<div><input type="checkbox" id="box" class="box">凸轮轴滑油低压</div>
+						</label>
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">全船失电</div>
+						</label>
+						<!-- <label style="width: 100%;">
+							<div><input type="checkbox" class="box">主机滑油进口压力低</div>
+						</label> -->
+					</div>
+					<div id="problembox2">
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">凸轮轴滑油进口压力低</div>
+						</label>
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">透平滑油进口压力低</div>
+						</label>
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">活塞冷却水进口低压</div>
+						</label>
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">活塞冷却水出口温度高</div>
+						</label>
+					</div>
+					<div id="problembox3">
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">活塞冷却水无流量</div>
+						</label>
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">汽缸冷却水无流量</div>
+						</label>
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">缸套冷却水进口低压</div>
+						</label>
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">汽缸冷却水出口温度高</div>
+						</label>
+					</div>
+					<div id="problembox4">
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">气缸出口排气/偏差高温</div>
+						</label>
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">扫气空气高温</div>
+						</label>
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">主机曲柄箱油雾高</div>
+						</label>
+						<label style="width: 100%;">
+							<div><input type="checkbox" class="box">主机推力轴承高温</div>
+						</label>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div id="footer">
+			<img src="img/foot.png" width="100%" height="100%" />
+		</div>
+
+	</div>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.flot.axislabels.js"></script>
+	<script type="text/javascript" src="js/jquery.flot.js"></script>
+	<script type="text/javascript" src="js/jquery.flot.symbol.js"></script>
+	<script type="text/javascript" src="js/calculate.js"></script>
+	<script type="text/javascript" src="js/schematicDiagram.js"></script>
+	<script type="text/javascript" src="js/bridge.js"></script>
+	<script type="text/javascript" src="js/controlRoom.js"></script>
+	<!-- <script type="text/javascript" src="js/controlPanel.js"></script> -->
+	<script type="text/javascript" src="js/telegraph.js"></script>
+	<script type="text/javascript" src="js/local.js"></script>
+	<script type="text/javascript" src="js/pid.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/regulator.js"></script>
+	<script type="text/javascript" src="js/alarm.js"></script>
+
+
+	<!--隐藏3D部分动态模型-->
+	<!-- <script type="text/javascript" src="js/threeD.js"></script> -->
+	<script type="text/javascript" src="js/diagram.js"></script>
+	<script>
+		window.onload = function () {
+			//rmp = 0;
+			GetData1();
+			GetData2();
+
+			dataset1 = [{
+				label: "index",
+				data: data1,
+				color: "blue"
+			}];
+			dataset2 = [{
+				label: "RPM",
+				data: data2,
+				color: "blue"
+			}];
+			$.plot($("#flot-placeholder1"), dataset1, options1);
+			$.plot($("#flot-placeholder2"), dataset2, options2);
+
+			controlLocation(); //检验当前操作位置并改变辅车钟显示
+
+			onSea();
+			function update() {
+				// console.log('y = ',y)
+
+				checkStart(); //检验是否准备就绪，备车完毕
+				valueCheck(); //检查气动逻辑图
+				engineNotReadyCheck();//驾驶台、集控室下方EngineState菜单内容
+				if (trmp >= 0 || brmp >= 0 || lrmp >= 0) {
+					calculate();
+					if (rmpxlim !== 80 || ydlim !== 92) {
+						document.getElementById('cseqLimitersActive').style.backgroundColor = 'green'
+					} else {
+						document.getElementById('cseqLimitersActive').style.backgroundColor = '#c3c3c3'
+					}
+					if (trmp > 0 || brmp > 0 || lrmp > 0) {
+						document.getElementById('cseqAheadcmd').style.backgroundColor = 'green'
+						document.getElementById('cseqEngineRuningAhead').style.backgroundColor = 'green'
+					} else {
+						document.getElementById('cseqAheadcmd').style.backgroundColor = '#c3c3c3'
+						document.getElementById('cseqEngineRuningAhead').style.backgroundColor = '#c3c3c3'
+					}
+
+				}
+				// if (trmp == 0 && brmp == 0 && lrmp == 0) {
+				// 	document.getElementById('cseqStopsv').style.backgroundColor = 'red'
+				// 	if (value116x % 2 == 0 && value118x % 2 == 0 && valueMainx % 2 == 0) {
+				// 		document.getElementById('cseqStopsv').style.backgroundColor = '#c3c3c3'
+				// 	}
+				// } else {
+				// 	document.getElementById('cseqStopsv').style.backgroundColor = '#c3c3c3'
+				// }
+				GetData1();
+				GetData2();
+				$.plot($("#flot-placeholder1"), dataset1, options1);
+				$.plot($("#flot-placeholder2"), dataset2, options2);
+
+				// if (rmpx == 0) {
+				// 	document.getElementById('threeDgif').src = "img/gif-0.gif"
+				// } else if (rmpx <= 30 && rmpx > 0) {
+				// 	document.getElementById('threeDgif').src = "img/gif-1.gif"
+				// } else if (rmpx <= 60 && rmpx > 30) {
+				// 	document.getElementById('threeDgif').src = "img/gif-2.gif"
+				// } else if (rmpx > 60) {
+				// 	document.getElementById('threeDgif').src = "img/gif-3.gif"
+				// }
+				document.getElementById('threeSpeed').innerHTML = parseInt(rmpx)
+
+				//集控室杠杆随着集控室车钟的变化而变化
+				bpointerLever1(ydx, ydp, 'cCanvas1');
+				//集控室和驾控台表盘指针及示数随着集控室车钟的变化而变化
+				pointerRotate(rmpx * 0.75, 'cMERPMPointer');
+				pointerRotate(rmpx * 0.75, 'bMERPMPointer');
+				pointerRotate(rmpx * 0.75, 'lpointer');
+				pointerRotate(rmpx * 0.75, 'plpointer');
+				pointerRotate(rmpx * 0.75, 'olpointer');
+				pointerRotate(rmpx * 0.75, 'glpointer');
+				pointerRotate(rmpx * 0.75, 'tlpointer');
+				pointerRotate(ydp * 1.8 - 90, 'bActuatorPosFeedbackPointer');
+				pointerRotate(ydp * 1.8 - 90, 'cActuatorPosFeedbackPointer');
+				innerChange(parseInt(rmpx), 'RPM', 'cMERPM');
+				innerChange(parseInt(rmpx), 'RPM', 'bMERPM');
+				innerChange(parseInt(ydp), '', 'bActuatorPosFeedback');
+				innerChange(parseInt(ydp), '', 'cActuatorPosFeedback');
+
+				console.log('yd1:', yd1, "----------rpm", rmp, "---------ydx", ydx)
+				console.log(yd1, yd)
+				setTimeout(update, 600);//600
+			}
+			update();
+
+		}
+	</script>
+	<!-- <script src="/socket.io/socket.io.js"></script> -->
+	<!-- <script type="text/javascript" src="js/socket.js"></script> -->
+</body>
+
+</html>

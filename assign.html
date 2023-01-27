@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分配题目中</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+        }
+
+
+        #box {
+            margin-top: 10%;
+
+        }
+
+        #wenzi {
+            font-size: 50px;
+            color: white;
+            font-weight: 500;
+            margin: 50px 150px;
+            text-shadow: 2px 2px 2px black, 0 0 25px rgb(30, 89, 227), 0 0 5px rgb(4, 4, 190);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <p id="wenzi">系统正在为您分配题目中......</p>
+    </div>
+</body>
+<script>
+    setTimeout(() => {
+        window.location.href = './exam.html'
+    }, 3000)
+</script>
+
+</html>

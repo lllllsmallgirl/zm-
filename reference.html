@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>试题及参考答案</title>
+    <link rel="stylesheet" href="JS/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <style>
+        #wrapper {
+            position: absolute;
+            width: 1100px;
+            left: 150px;
+        }
+
+        .dropdown {
+            text-decoration: none;
+            position: absolute;
+            right: 10px;
+        }
+
+        .dropdown-toggle {
+            font-family: "新宋体";
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .childp {
+            font-size: 18px;
+        }
+
+        .childol {
+            list-style: upper-roman;
+            font-size: 18px;
+        }
+
+        .childul {
+            list-style: decimal;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1 style="text-align:center">考试题库及参考答案</h1>
+        <nav id="navbar1" class="navbar navbar-default navbar-static" role="navigation">
+            <div class="container-fluid">
+                <div class="dropdown" style="text-decoration:none"><a href="#" class="dropdown-toggle"
+                        data-toggle="dropdown">按考试题目快速查找 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#first">主机备车操作</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#second">主机操纵位置切换操作</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#third">驾驶台遥控操作(主机启停)</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#forth">集控室遥控操作(主机启停)</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#fifth">机旁应急操作(主机启停)</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#sixth">紧急停车操作</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#seventh">设置轮机长最大转速限制</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#eighth">故障排除</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div data-spy="scroll" data-target="#navbar1">
+            <div id="first">
+                <h3 class="childhead">题目——主机备车操作</h3>
+                <div class="childbody">
+                    <p class="childp">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<b>考题要求：</b>通过气动操作完成主机备车。考试标准时间10分钟，超时扣分。
+                    </p>
+                    <p class="childp">&nbsp;&nbsp;&nbsp;&nbsp;<b>该考题的初始状态：</b>原始工况。</p>
+                    <p class="childp" style=" font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;考生需要完成的操作：</p>
+                    <ol class="childol">
+                        <ul class="childul">
+                            <li>气动操纵单元：依次打开起动空气控制阀、进排气空气阀、安全阀、空气分配器控制阀、调节主起动阀至“unblock”、脱开盘车机；</li>
+                            <li>机旁：调节压紧手轮，使油门拉杆连接到调速器；</li>
+                            注：也可直接点击“工况选择”中的“备车完成”，实现上述操作。
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+            </br>
+            <div id="second">
+                <h3 class="childhead">题目——主机操纵位置切换操作（驾驶台切换到集控室）</h3>
+                <div class="childbody">
+                    <p class="childp">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<b>考题要求：</b>在“驾驶台”、“集控车钟”、“机旁”三个页面进行操纵位置切换。考试标准时间5分钟，超时扣分。
+                    </p>
+                    <p class="childp">&nbsp;&nbsp;&nbsp;&nbsp;<b>该考题的初始状态：</b>备车完毕</p>
+                    <p class="childp" style=" font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;考生需要完成的操作：</p>
+                    <ol class="childol" style="list-style:none;">
+                        <ul class="childul">
+                            <li>在“集控车钟”页面点击辅车钟上“ECR”按钮，进行权限请求;</li>
+                            <li>“驾驶台”页面，辅车钟的“ECR”位置led灯光变红，表明集控室正在进行权限请求。点击“ECR”按钮同意权限请求，“ECR”位置led灯光变为绿色，表示已同意权限请求;
+                            </li>
+                            <li>点击“集控车钟”页面的操作部位切换扳手，使其转向“ECR”，进行权限切换操作;</li>
+                            <li>此时，辅车钟上“ECR”位置led灯光变黄长亮，“bridge”位置灯光熄灭。至此，操作权限已从驾驶台切换到集控室，权限切换操作完成。</li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+            </br>
+            
+            <div id="forth">
+                <h3 class="childhead">题目——驾驶台遥控操作(主机启停)</h3>
+                <div class="childbody">
+                    <p class="childp">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<b>考题要求：</b>在驾驶台位置进行主机的启停。考试标准时间10分钟，超时扣分。
+                    </p>
+                    <p class="childp">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<b>该考题的初始状态：</b>备车完毕
+                    </p>
+                    <p class="childp" style=" font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;考生需要完成的操作：</p>
+                    <ol class="childol">
+                        <ul class="childul">
+                            <li>在“驾驶台”页面观察到上“Eng Ready”、“System Ready”指示灯亮起，表示系统已经备车成功，可以进行启动;</li>
+                            <li>在辅车钟上观察到“BRIDGE”指示灯常亮，辨明当前操纵部位为驾驶台，可在驾驶台进行启动;</li>
+                            <li>向上（正车）/向下（倒车）推动驾驶台车钟杠杆至任一位置，主机将进行换向、空气起动、并根据车钟位置进行自动调油调速，通过左边的表盘示数可观察到当前转速情况;</li>
+                            <li>推动驾驶台车钟杠杆至中间的“stop”位置即可实现停车操作。</li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+            </br>
+            <div id="fifth">
+                <h3 class="childhead">题目——集控室遥控操作(主机启停)</h3>
+                <div class="childbody">
+                    <p class="childp">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<b>考题要求：</b>在集控室位置进行主机的启停。考试标准时间10分钟，超时扣分。
+                    </p>
+                    <p class="childp">&nbsp;&nbsp;&nbsp;&nbsp;<b>该考题的初始状态：</b>备车完毕</p>
+                    <p class="childp" style=" font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;考生需要完成的操作：</p>
+                    <ol class="childol">
+                        <ul class="childul" >
+                            <li>在“集控室”页面观察到上“Eng Ready”“System Ready”指示灯亮起，表示系统已经备车成功，可以进行启动；</li>
+                            <li>在辅车钟上观察到“ECR”指示灯常亮，辨明当前操纵部位为集控室，可在集控室进行启动；</li>
+                            <li>驾驶台车钟向上（正车）/向下（倒车）推动驾驶台车钟杠杆至任一位置，发送车令；</li>
+                            <li>在“集控车钟”页面推动车钟杠杆使其与驾驶台车令位置一致，进行回令，并完成换向操作；</li>
+                            <li>油门杠杆至“start”位置，主机开始空气启动，此时可以在“气动操纵逻辑单元”界面观察到空气启动的动画效果。当主机达到发火转速后，在“集控车钟”页面继续向上（正车）或向下（倒车）推动油门杠杆至任一位置，结束空气启动，主机开始燃烧柴油进行工作；
+                            </li>
+                            <li>在“集控车钟”页面推动油门杠杆至“stop”位置即可实现停车操作。</li>
+                        </ul>
+
+                    </ol>
+                </div>
+            </div>
+            </br>
+            <div id="third">
+                <h3 class="childhead">题目——机旁应急操作(主机启停)</h3>
+                <div class="childbody">
+                    <p class="childp">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<b>考题要求：</b>在机旁位置进行主机的启停。考试标准时间10分钟，超时扣分。
+                    </p>
+                    <p class="childp">&nbsp;&nbsp;&nbsp;&nbsp;<b>该考题的初始状态：</b>原始工况
+                    </p>
+                    <p class="childp" style=" font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;考生需要完成的操作：</p>
+                    <ol class="childol" style="list-style:none;">
+                        <li>气动操纵页面
+                            <ul class="childul">
+                                <li>依次打开进气阀门、空气分配器阀门、调节主起动阀至“unblock”、脱开盘车机。</li>
+
+                            </ul>
+                        </li>
+                        <li>机旁页面
+                            <ul class="childul">
+                                <li>操纵部位切换扳手切换至LOCAL位置;</li>
+                                <li>根据副车钟显示信息，对驾驶台车钟进行回令操作;</li>
+                                <li>根据驾驶台车令，对主机进行正/倒车换向操作;</li>
+                                <li>逆时针转动手动/遥控切换手柄，脱开调速器，使油门拉杆连接到油门调节手轮;</li>
+                                <li>扳动锁紧手柄至unlocked状态，使油门调节手轮处于自由状态。顺时针转动油门调节手轮进行加油，使调节油门进油量达到START刻度线以上;</li>
+                                <li>按住START按钮，主机开始空气启动，观察主机转速变化;</li>
+                                <li>当主机达到发火转速后，松开START按钮，调节油门手轮对主机进行调油。若初始油门进油量不足，则会熄火从而导致起动失败;</li>
+                                <li>按下STOP按钮实现停车操作，同时调节油门手轮将齿条刻度调为0。</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            </br>
+            <div id="sixth">
+                <h3 class="childhead">题目——紧急停车操作</h3>
+                <div class="childbody">
+                    <p class="childp">&nbsp;&nbsp;&nbsp;&nbsp;<b>考题要求：</b>在主机运行时进行紧急停车操作，使转速为0。考试标准时间5分钟，超时扣分。
+                    </p>
+                    <p class="childp">&nbsp;&nbsp;&nbsp;&nbsp;<b>该考题的初始状态：</b>主机运行。</p>
+                    <p class="childp" style=" font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;考生需要完成的操作：</p>
+                    <ol class="childol">
+                        <ul class="childul">
+                            <li>航行状态时，在已获取驾驶权限的操作位置页面里按下“Emergency Stop”紧急停车按钮；</li>
+                            <li>页面上的“Cancel SHD”取消紧急停车按钮的指示灯开始闪烁。若在闪烁期间按下该按钮，则会取消紧急停车；若在闪烁期间不进行任何操作，结束闪烁后则会实现紧急停车操作。</li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+            </br>
+            <div id="seventh">
+                <h3 class="childhead">题目——设置轮机长最大转速限制</h3>
+                <div class="childbody">
+                    <p class="childp">&nbsp;&nbsp;&nbsp;&nbsp;<b>考题要求：</b>在主机运行时设置轮机长最大转速限制，使主机转速不超过60RPM。考试标准时间5分钟，超时扣分。
+                    </p>
+                    <p class="childp">&nbsp;&nbsp;&nbsp;&nbsp;<b>该考题的初始状态：</b>主机运行。</p>
+                    <p class="childp" style=" font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;考生需要完成的操作：</p>
+                    <ol class="childol">
+                        <ul class="childul">
+                            <li>在调速器界面左侧功能选择区内通过DOWN/UP按键进行切换，选中6号轮机长最大转速限制；</li>
+                            <li>在右侧数值设定区通过DOWN/UP按键将轮机长最大转速限制的数值设定为60。点击SAVE按键进行保存。</li>
+                            <li>进入状态曲线界面，观察轮机长最大转速限制设定之后的转速变化情况。</li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+            </br>
+            <div id="eighth">
+                <h3 class="childhead">题目——故障排除</h3>
+                <div class="childbody">
+                    <p class="childp">&nbsp;&nbsp;&nbsp;&nbsp;<b>考题要求：</b>排除故障，使主机运转。考试标准时间5分钟，超时扣分。
+                    </p>
+                    <p class="childp">&nbsp;&nbsp;&nbsp;&nbsp;<b>该考题的初始状态：</b>主机备车失败。</p>
+                    <p class="childp" style=" font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;考生需要完成的操作：</p>
+                    <ol class="childol">
+                        <ul class="childul">
+                            <li>在驾驶台界面点击“Engine State”进入主机状态界面，观察“ENGINE NOT READY”区内主机备车失败的故障原因。排除故障，启动主机。</li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+            </br>
+        </div>
+
+    </div>
+    <script src="JS/插件js/jquery.min.js"></script>
+    <script src="JS/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

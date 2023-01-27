@@ -1,0 +1,284 @@
+#telegraph {
+    width: 1280px;
+    height: 795px;
+    background-color: #CCE8CF;
+}
+
+#tbutton1 {
+    width: 290px;
+    height: 72px;
+    border-radius: 50px;
+    border: 8px solid #C4C2C2;
+    position: relative;
+    top: 100px;
+    left: 70px;
+    background-color: #000000;
+}
+
+#tbutton2 {
+    width: 290px;
+    height: 72px;
+    border-radius: 50px;
+    border: 8px solid #C4C2C2;
+    position: relative;
+    top: 120px;
+    left: 70px;
+    background-color: #000000;
+}
+
+#tbutton1>div {
+    width: 56px;
+    height: 56px;
+    border: 2px solid white;
+    border-radius: 56px;
+    float: left;
+    color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+    padding-top: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#tbutton1>div>div {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+}
+
+#tbutton2>div {
+    width: 56px;
+    height: 56px;
+    border: 2px solid white;
+    border-radius: 56px;
+    float: left;
+    color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+    padding-top: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#tbutton2>div>div {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+}
+
+#thandlebox {
+    padding: 5px;
+    width: 200px;
+    height: 170px;
+    border: 5px solid #C0C0C0;
+    border-radius: 25px;
+    position: relative;
+    top: 300px;
+    left: 150px;
+    background-color: #000000;
+    color: white;
+    font-size: 16px;
+}
+
+
+
+#thandle {
+    height: 100px;
+    position: relative;
+    left: 60px;
+    top: 16px;
+    cursor: pointer;
+    transform-origin: 31% 31%;
+    transform: rotate(0deg);
+}
+
+#ttelegraphbox {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    top: 0px;
+}
+
+#ttelegraph1 {
+    width: 250px;
+    position: absolute;
+    top: -250px;
+    left: 500px;
+}
+
+#ttelegraph1lever {
+    width: 143px;
+    height: 50px;
+    background-color: #000000;
+    position: relative;
+    left: 553px;
+    cursor: pointer;
+}
+
+#ttelegraph1LedBox1 {
+    width: 50px;
+    height: 500px;
+    position: absolute;
+    left: 510px;
+    top: -210px;
+    /*border: 1px solid red;*/
+}
+
+.ttelegraph1Led1 {
+    width: 30px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #640000;
+    margin: 29px 10px;
+}
+
+#ttelegraph1LedBox2 {
+    width: 50px;
+    height: 500px;
+    position: absolute;
+    left: 690px;
+    top: -210px;
+    /*border: 1px solid red;*/
+}
+
+.ttelegraph1Led2 {
+    width: 30px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #640000;
+    margin: 29px 10px;
+}
+
+#ttelegraph1Text1 {
+    width: 100px;
+    height: 15px;
+    position: absolute;
+    /*border: 1px solid red;*/
+    left: 575px;
+    top: 255px;
+    color: yellow;
+    text-align: center;
+    font-size: 12px;
+}
+
+#ttelegraphButtonBox1 {
+    width: 40px;
+    height: 150px;
+    /*border: 1px solid red;*/
+    position: relative;
+    left: 515px;
+    top: 210px;
+    color: white;
+}
+
+#ttelegraphButtonBox1>div {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    border: 2px solid white;
+    margin-top: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#ttelegraphButtonBox1>div>div {
+    width: 7px;
+    height: 7px;
+    border-radius: 7px;
+    border: 1px solid white;
+    position: relative;
+    top: -20px;
+    background-color: white;
+}
+
+#ttelegraphButtonBox2 {
+    width: 40px;
+    height: 150px;
+    /* border: 1px solid red; */
+    position: relative;
+    left: 700px;
+    top: 50px;
+    color: white;
+    text-align: center;
+}
+
+#temergencyStop {
+    width: 70px;
+    height: 25px;
+    /*border: 1px solid yellow;*/
+    color: black;
+    position: relative;
+    left: 590px;
+    top: -14px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#ttelegraphButtonBox2>div {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    border: 2px solid white;
+    margin-top: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#tstaByLed,
+#tatSeaLed {
+    width: 7px;
+    height: 7px;
+    border-radius: 7px;
+    border: 1px solid white;
+    position: relative;
+    top: -35px;
+    background-color: white;
+}
+
+#tfweLed {
+    width: 7px;
+    height: 7px;
+    border-radius: 7px;
+    border: 1px solid white;
+    position: relative;
+    top: -19px;
+    background-color: white;
+}
+
+
+#ttelegraph2 {
+    width: 250px;
+    position: absolute;
+    top: -220px;
+    left: 900px;
+}
+
+#ttelegraph2lever {
+    position: absolute;
+    left: 1050px;
+    top: 0px;
+    cursor: pointer;
+}
+
+#ttelegraph2watch {
+    padding-right: 75px;
+    width: 250px;
+    height: 100px;
+    border: 1px solid blue;
+    position: relative;
+    left: 900px;
+    top: 300px;
+    background-color: black;
+    color: #00FF00;
+    font-size: 65px;
+    text-align: right;
+}

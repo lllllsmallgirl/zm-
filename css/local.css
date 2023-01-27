@@ -1,0 +1,1319 @@
+#local {
+    width: 1280px;
+    height: 795px;
+    background-color: #CCE8CF;
+}
+
+#lbox1 {
+    width: 408px;
+    height: 550px;
+    background-color: #C4C2C2;
+    position: relative;
+    top: 93px;
+    left: 42px;
+    border-radius: 25px;
+    border: 2px solid white;
+    float: left;
+}
+
+#white1,
+#white2,
+#white3,
+#white4,
+#pstart,
+#pstop,
+#pswitch1,
+#pswitch3,
+#wheelswitch,
+#impactwheel {
+    filter: alpha(opacity：0);
+    opacity: 0;
+}
+
+#lbox1box {
+    width: 370px;
+    height: 510px;
+    position: relative;
+    margin: 17px auto;
+    background-color: black;
+    border-radius: 25px;
+    border: 2px solid white;
+    color: #FFFF00;
+}
+
+#lpancel1 {
+    position: relative;
+    left: 120px;
+    top: 30px;
+}
+
+#lpointer {
+    height: 60px;
+    position: relative;
+    top: -509px;
+    left: 139px;
+}
+
+#lbox1Ledbox {
+    width: 350px;
+    height: 200px;
+    /*border: 1px solid red;*/
+    position: relative;
+    top: 50px;
+}
+
+#laheadLed,
+#lasternLed,
+#lshutDownLed,
+#lbridgeControlLed,
+#lTurningGearEngagedLed,
+#lcontrolRoomControlLed,
+#lauxBlowerRunningLed,
+#lemergencyControlLed {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    margin-left: 40px;
+    margin-right: 90px;
+    margin-bottom: 22px;
+    float: left;
+}
+
+#laheadLed {
+    background-color: #00FF00;
+}
+
+#lasternLed,
+#lshutDownLed {
+    background-color: #800000;
+}
+
+#lbridgeControlLed,
+#lcontrolRoomControlLed {
+    background-color: #085A13;
+}
+
+#lTurningGearEngagedLed,
+#lemergencyControlLed {
+    background-color: #FF0000;
+}
+
+#lauxBlowerRunningLed {
+    background-color: #085A13;
+}
+
+#lbuttonCancelShutDown {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 30px auto;
+    background-color: #800000;
+    cursor: pointer;
+    position: relative;
+    top: 50px;
+    left: -70px;
+}
+
+#lbuttonLampTest {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 30px auto;
+    background-color: grey;
+    cursor: pointer;
+    position: relative;
+    top: -45px;
+    left: 50px;
+}
+
+#lbox1canvas {
+    /*border: 1px solid red;*/
+    position: absolute;
+    top: 160px;
+}
+
+#llogo {
+    position: relative;
+    top: -120px;
+    left: 5px;
+}
+
+/* box1副本 */
+#plbox1 {
+    width: 408px;
+    height: 550px;
+    background-color: #C4C2C2;
+    position: absolute;
+    top: 107px;
+    left: 95px;
+    border-radius: 25px;
+    border: 2px solid white;
+    float: left;
+
+}
+
+#plbox1box {
+    width: 370px;
+    height: 510px;
+    position: absolute;
+    top: 6px;
+    left: 17px;
+    margin: 9px auto;
+    background-color: black;
+    border-radius: 12px;
+    border: 2px solid white;
+    color: #FFFF00;
+}
+
+#plpancel1 {
+    position: absolute;
+    left: 120px;
+    top: 30px;
+
+}
+
+#plpointer {
+    height: 60px;
+    position: relative;
+    top: -379px;
+    left: 139px;
+}
+
+#plbox1Ledbox {
+    width: 350px;
+    height: 200px;
+    /*border: 1px solid red;*/
+    position: relative;
+    top: 170px;
+}
+
+#plaheadLed,
+#plasternLed,
+#plshutDownLed,
+#plbridgeControlLed,
+#plTurningGearEngagedLed,
+#plcontrolRoomControlLed,
+#plauxBlowerRunningLed,
+#plemergencyControlLed {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    margin-left: 40px;
+    margin-right: 90px;
+    margin-bottom: 22px;
+    float: left;
+}
+
+#plaheadLed {
+    background-color: #00FF00;
+}
+
+#plasternLed,
+#plshutDownLed {
+    background-color: #800000;
+}
+
+#plbridgeControlLed,
+#plcontrolRoomControlLed {
+    background-color: #085A13;
+}
+
+#plTurningGearEngagedLed,
+#plemergencyControlLed {
+    background-color: #FF0000;
+}
+
+#plauxBlowerRunningLed {
+    background-color: #085A13;
+}
+
+#plbuttonCancelShutDown {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 30px auto;
+    background-color: #800000;
+    cursor: pointer;
+    position: relative;
+    top: 180px;
+    left: -70px;
+}
+
+#plbuttonLampTest {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 30px auto;
+    background-color: grey;
+    cursor: pointer;
+    position: relative;
+    top: 85px;
+    left: 50px;
+}
+
+#plbox1canvas {
+    /*border: 1px solid red;*/
+    position: absolute;
+    top: 152px;
+    /* left: -12px; */
+}
+
+#pllogo {
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+
+/* box1副本gov */
+#glbox1 {
+    width: 408px;
+    height: 550px;
+    background-color: #C4C2C2;
+    position: absolute;
+    top: 107px;
+    left: 95px;
+    border-radius: 25px;
+    border: 2px solid white;
+    float: left;
+
+}
+
+#glbox1box {
+    width: 370px;
+    height: 510px;
+    position: absolute;
+    top: 6px;
+    left: 17px;
+    margin: 9px auto;
+    background-color: black;
+    border-radius: 12px;
+    border: 2px solid white;
+    color: #FFFF00;
+}
+
+#glpancel1 {
+    position: absolute;
+    left: 120px;
+    top: 30px;
+
+}
+
+#glpointer {
+    height: 60px;
+    position: relative;
+    top: -379px;
+    left: 139px;
+}
+
+#glbox1Ledbox {
+    width: 350px;
+    height: 200px;
+    /*border: 1px solid red;*/
+    position: relative;
+    top: 170px;
+}
+
+#glaheadLed,
+#glasternLed,
+#glshutDownLed,
+#glbridgeControlLed,
+#glTurningGearEngagedLed,
+#glcontrolRoomControlLed,
+#glauxBlowerRunningLed,
+#glemergencyControlLed {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    margin-left: 40px;
+    margin-right: 90px;
+    margin-bottom: 22px;
+    float: left;
+}
+
+#glaheadLed {
+    background-color: #00FF00;
+}
+
+#glasternLed,
+#glshutDownLed {
+    background-color: #800000;
+}
+
+#glbridgeControlLed,
+#glcontrolRoomControlLed {
+    background-color: #085A13;
+}
+
+#glTurningGearEngagedLed,
+#glemergencyControlLed {
+    background-color: #FF0000;
+}
+
+#glauxBlowerRunningLed {
+    background-color: #085A13;
+}
+
+#glbuttonCancelShutDown {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 30px auto;
+    background-color: #800000;
+    cursor: pointer;
+    position: relative;
+    top: 180px;
+    left: -70px;
+}
+
+#glbuttonLampTest {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 30px auto;
+    background-color: grey;
+    cursor: pointer;
+    position: relative;
+    top: 85px;
+    left: 50px;
+}
+
+#glbox1canvas {
+    /*border: 1px solid red;*/
+    position: absolute;
+    top: 152px;
+    /* left: -12px; */
+}
+
+#gllogo {
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+
+
+/* opwheel的box1副本 */
+#olbox1 {
+    width: 408px;
+    height: 550px;
+    background-color: #C4C2C2;
+    position: absolute;
+    top: 107px;
+    left: 95px;
+    border-radius: 25px;
+    border: 2px solid white;
+    float: left;
+
+}
+
+#olbox1box {
+    width: 370px;
+    height: 510px;
+    position: absolute;
+    top: 6px;
+    left: 17px;
+    margin: 9px auto;
+    background-color: black;
+    border-radius: 12px;
+    border: 2px solid white;
+    color: #FFFF00;
+}
+
+#olpancel1 {
+    position: absolute;
+    left: 120px;
+    top: 30px;
+
+}
+
+#olpointer {
+    height: 60px;
+    position: relative;
+    top: -379px;
+    left: 139px;
+}
+
+#olbox1Ledbox {
+    width: 350px;
+    height: 200px;
+    /*border: 1px solid red;*/
+    position: relative;
+    top: 170px;
+}
+
+#olaheadLed,
+#olasternLed,
+#olshutDownLed,
+#olbridgeControlLed,
+#olTurningGearEngagedLed,
+#olcontrolRoomControlLed,
+#olauxBlowerRunningLed,
+#olemergencyControlLed {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    margin-left: 40px;
+    margin-right: 90px;
+    margin-bottom: 22px;
+    float: left;
+}
+
+#olaheadLed {
+    background-color: #00FF00;
+}
+
+#olasternLed,
+#olshutDownLed {
+    background-color: #800000;
+}
+
+#olbridgeControlLed,
+#olcontrolRoomControlLed {
+    background-color: #085A13;
+}
+
+#olTurningGearEngagedLed,
+#olemergencyControlLed {
+    background-color: #FF0000;
+}
+
+#olauxBlowerRunningLed {
+    background-color: #085A13;
+}
+
+#olbuttonCancelShutDown {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 30px auto;
+    background-color: #800000;
+    cursor: pointer;
+    position: relative;
+    top: 180px;
+    left: -70px;
+}
+
+#olbuttonLampTest {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 30px auto;
+    background-color: grey;
+    cursor: pointer;
+    position: relative;
+    top: 85px;
+    left: 50px;
+}
+
+#olbox1canvas {
+    /*border: 1px solid red;*/
+    position: absolute;
+    top: 152px;
+    /* left: -12px; */
+}
+
+#ollogo {
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+
+/* tele的box1副本 */
+#tlbox1 {
+    width: 408px;
+    height: 550px;
+    background-color: #C4C2C2;
+    position: absolute;
+    top: 107px;
+    left: 95px;
+    border-radius: 25px;
+    border: 2px solid white;
+    float: left;
+
+}
+
+#tlbox1box {
+    width: 370px;
+    height: 510px;
+    position: absolute;
+    top: 6px;
+    left: 17px;
+    margin: 9px auto;
+    background-color: black;
+    border-radius: 12px;
+    border: 2px solid white;
+    color: #FFFF00;
+}
+
+#tlpancel1 {
+    position: absolute;
+    left: 120px;
+    top: 30px;
+
+}
+
+#tlpointer {
+    height: 60px;
+    position: relative;
+    top: -379px;
+    left: 139px;
+}
+
+#tlbox1Ledbox {
+    width: 350px;
+    height: 200px;
+    /*border: 1px solid red;*/
+    position: relative;
+    top: 170px;
+}
+
+#tlaheadLed,
+#tlasternLed,
+#tlshutDownLed,
+#tlbridgeControlLed,
+#tlTurningGearEngagedLed,
+#tlcontrolRoomControlLed,
+#tlauxBlowerRunningLed,
+#tlemergencyControlLed {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    margin-left: 40px;
+    margin-right: 90px;
+    margin-bottom: 22px;
+    float: left;
+}
+
+#tlaheadLed {
+    background-color: #00FF00;
+}
+
+#tlasternLed,
+#tlshutDownLed {
+    background-color: #800000;
+}
+
+#tlbridgeControlLed,
+#tlcontrolRoomControlLed {
+    background-color: #085A13;
+}
+
+#tlTurningGearEngagedLed,
+#tlemergencyControlLed {
+    background-color: #FF0000;
+}
+
+#tlauxBlowerRunningLed {
+    background-color: #085A13;
+}
+
+#tlbuttonCancelShutDown {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 30px auto;
+    background-color: #800000;
+    cursor: pointer;
+    position: relative;
+    top: 180px;
+    left: -70px;
+}
+
+#tlbuttonLampTest {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 30px auto;
+    background-color: grey;
+    cursor: pointer;
+    position: relative;
+    top: 85px;
+    left: 50px;
+}
+
+#tlbox1canvas {
+    /*border: 1px solid red;*/
+    position: absolute;
+    top: 152px;
+    /* left: -12px; */
+}
+
+#tllogo {
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+
+
+
+#lbox2 {
+    width: 342px;
+    height: 733px;
+    position: relative;
+    background-color: #3c3c3c;
+    top: 38px;
+    left: 75px;
+    border-radius: 25px;
+    border: 2px solid white;
+    float: left;
+}
+
+#lbox2box {
+    width: 315px;
+    height: 710px;
+    position: relative;
+    margin: 10px auto;
+    background-color: #969696;
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+#lbox2box1 {
+    width: 69px;
+    height: 174px;
+    border-radius: 73px;
+    background-color: black;
+    position: relative;
+    top: 220px;
+    left: 25px;
+    border-top: 23px solid black;
+}
+
+#lbox2box1>div {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 8px 11px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#lwrWayled,
+#llaTestled {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+}
+
+#lbox2box2 {
+    width: 69px;
+    height: 208px;
+    border-radius: 73px;
+    border-top: 15px solid black;
+    background-color: black;
+    position: relative;
+    top: 298px;
+    left: 25px;
+    float: left;
+}
+
+#lbox2box2>div {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 8px 11px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#lbcrled,
+#lecrled,
+#llocled {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+}
+
+#lbox2box3 {
+    width: 69px;
+    height: 650px;
+    border-radius: 73px;
+    border-top: 20px solid black;
+    background-color: black;
+    float: left;
+    position: relative;
+    top: -145px;
+    left: 60px;
+}
+
+#lbox2box3>div {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 5px 11px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#lnavFullled,
+#lfullled,
+#lhalfled,
+#lslowled,
+#ldeSlowled,
+#lstopled,
+#ldeSlow1led,
+#lslow1led,
+#lhalf1led,
+#lfull1led,
+#lemAstled {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+}
+
+#lbox2box4 {
+    width: 69px;
+    height: 205px;
+    border-radius: 73px;
+    background-color: black;
+    float: left;
+    position: relative;
+    top: 300px;
+    left: 90px;
+    border-top: 13px solid black;
+}
+
+#lbox2box4>div {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 8px 11px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#latSealed,
+#lstByled,
+#lfweled {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+}
+
+#lbox2boxStop {
+    width: 90px;
+    height: 80px;
+    position: relative;
+    left: 7px;
+    top: 70px;
+    float: left;
+    color: red;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* panel页面的副本 */
+
+
+
+#plbox2 {
+    width: 342px;
+    height: 733px;
+    position: relative;
+    background-color: #3c3c3c;
+    top: 48px;
+    left: 712px;
+    border-radius: 25px;
+    border: 2px solid white;
+    float: left;
+}
+
+#plbox2box {
+    width: 315px;
+    height: 710px;
+    position: relative;
+    margin: 10px auto;
+    background-color: #969696;
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+#plbox2box1 {
+    width: 69px;
+    height: 174px;
+    border-radius: 73px;
+    background-color: black;
+    position: relative;
+    top: 220px;
+    left: 25px;
+    border-top: 23px solid black;
+}
+
+#plbox2box1>div {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 8px 11px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#plwrWayled,
+#pllaTestled {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+}
+
+#plbox2box2 {
+    width: 69px;
+    height: 208px;
+    border-radius: 73px;
+    border-top: 15px solid black;
+    background-color: black;
+    position: relative;
+    top: 298px;
+    left: 25px;
+    float: left;
+}
+
+#plbox2box2>div {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 8px 11px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#plbcrled,
+#plecrled,
+#pllocled {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+}
+
+#plbox2box3 {
+    width: 69px;
+    height: 650px;
+    border-radius: 73px;
+    border-top: 20px solid black;
+    background-color: black;
+    float: left;
+    position: relative;
+    top: -145px;
+    left: 60px;
+}
+
+#plbox2box3>div {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 5px 11px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#plnavFullled,
+#plfullled,
+#plhalfled,
+#plslowled,
+#pldeSlowled,
+#plstopled,
+#pldeSlow1led,
+#plslow1led,
+#plhalf1led,
+#plfull1led,
+#plemAstled {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+}
+
+#plbox2box4 {
+    width: 69px;
+    height: 205px;
+    border-radius: 73px;
+    background-color: black;
+    float: left;
+    position: relative;
+    top: 300px;
+    left: 90px;
+    border-top: 13px solid black;
+}
+
+#plbox2box4>div {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 8px 11px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#platSealed,
+#plstByled,
+#plfweled {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+}
+
+#plbox2boxStop {
+    width: 90px;
+    height: 80px;
+    position: relative;
+    left: 7px;
+    top: 70px;
+    float: left;
+    color: red;
+    font-size: 15px;
+    text-align: center;
+}
+
+#plemergencyStop {
+    border-radius: 80px;
+    width: 40px;
+    height: 40px;
+    border: white 4px solid;
+    margin: 8px auto;
+    background-color: #7f0000;
+    cursor: pointer;
+}
+
+
+
+#lemergencyStop {
+    border-radius: 80px;
+    width: 40px;
+    height: 40px;
+    border: white 4px solid;
+    margin: 8px auto;
+    background-color: #7f0000;
+    cursor: pointer;
+}
+
+#lhandleBox1 {
+    padding-top: 5px;
+    width: 190px;
+    height: 167px;
+    position: relative;
+    top: 38px;
+    left: 100px;
+    border: 3px solid white;
+    border-radius: 25px;
+    background-color: black;
+    float: left;
+    color: white;
+    font-size: 17px;
+    font-family: "times new roman";
+}
+
+#lhandle1 {
+    height: 100px;
+    position: relative;
+    top: 20px;
+    left: 55px;
+    cursor: pointer;
+    transform-origin: 31% 31%;
+    transform: rotate(0deg);
+}
+
+#lhandleBox2 {
+    padding-top: 5px;
+    width: 190px;
+    height: 167px;
+    position: relative;
+    top: 38px;
+    left: 130px;
+    border: 3px solid white;
+    border-radius: 25px;
+    background-color: black;
+    float: left;
+    color: white;
+    font-size: 17px;
+    font-family: "times new roman";
+}
+
+#lhandle2 {
+    height: 100px;
+    position: relative;
+    top: 20px;
+    left: 55px;
+    cursor: pointer;
+    transform-origin: 31% 31%;
+    transform: rotate(90deg);
+}
+
+#lhandle3 {
+    width: 72px;
+    position: relative;
+    left: 49px;
+    top: 22px;
+    cursor: pointer;
+}
+
+#lhandleBox3 {
+    position: absolute;
+    left: 870px;
+    top: 640px;
+    border: 3px solid white;
+    width: 160px;
+    height: 140px;
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+    padding: 5px;
+    z-index: 1;
+    font-size: 16px;
+}
+
+#lbuttonStartBox {
+    width: 155px;
+    height: 145px;
+    position: relative;
+    top: 45px;
+    left: 117px;
+    float: left;
+    border: 3px solid #dbdb00;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    font-family: "times new roman";
+    text-align: center;
+    padding: 5px;
+}
+
+#lbuttonStart {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 25px auto;
+    background-color: grey;
+    cursor: pointer;
+}
+
+#lbuttonStopBox {
+    width: 155px;
+    height: 145px;
+    position: relative;
+    top: 45px;
+    left: 182px;
+    float: left;
+    border: 3px solid #dbdb00;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    font-family: "times new roman";
+    text-align: center;
+    padding: 5px;
+}
+
+#lbuttonStop {
+    border-radius: 130px;
+    width: 65px;
+    height: 65px;
+    border: white 5px solid;
+    margin: 25px auto;
+    background-color: grey;
+    cursor: pointer;
+}
+
+#lwheel1 {
+    width: 80px;
+    float: left;
+    position: relative;
+    top: 230px;
+    left: -155px;
+}
+
+#lwheel2 {
+    width: 130px;
+    float: left;
+    position: relative;
+    top: 334px;
+    left: -260px;
+}
+
+#lwheel2canvas {
+    /*border: 1px solid red;*/
+    position: relative;
+    top: -5px;
+    left: 105px;
+}
+
+#lwheel1canvas {
+    position: absolute;
+    top: 435px;
+    left: 1071px;
+}
+
+/*#lbcrled,
+#lslowled,
+#lstByled {
+	background-color: yellow;
+}*/
+#lstopled {
+    background-color: #FFC200;
+}
+
+#lstop {
+    color: red;
+}
+
+#lpancel {
+    position: relative;
+    top: 230px;
+    width: 162px;
+    height: 242px;
+}
+
+#lwheel1Left {
+    width: 40px;
+    height: 80px;
+    /*border: 1px solid yellow;*/
+    position: relative;
+    left: 143px;
+    top: -146px;
+    float: left;
+}
+
+#lwheel1Right {
+    width: 40px;
+    height: 80px;
+    /*border: 1px solid yellow;*/
+    position: relative;
+    left: 143px;
+    top: -146px;
+    float: left;
+}
+
+#lwheel2Left {
+    width: 68px;
+    height: 125px;
+    /*border: 1px solid red;*/
+    position: relative;
+    left: 39px;
+    top: -43px;
+    float: left;
+}
+
+#lwheel2Right {
+    width: 68px;
+    height: 125px;
+    /*border: 1px solid red;*/
+    position: relative;
+    left: 39px;
+    top: -43px;
+    float: left;
+}
+
+#lshoulun {
+    position: absolute;
+    left: 1059px;
+    top: 415px;
+}
+
+#lhandwheel {
+    position: absolute;
+    left: 864px;
+    top: 370px;
+}
+
+#lhandwheelDis {
+    position: absolute;
+    left: 1041px;
+    top: 405px;
+    font-size: x-small;
+}
+
+#lhandwheelCon {
+    position: absolute;
+    left: 1162px;
+    top: 405px;
+    font-size: x-small;
+}
+
+
+#back {
+    position: absolute;
+    height: 761px;
+    width: 1281px;
+    top: 34px;
+    left: 0px;
+}
